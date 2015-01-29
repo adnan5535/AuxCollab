@@ -3,6 +3,7 @@
 
 #line 6 "main.c"
  
+
 #line 1 "C:/Program Files (x86)/Microchip/mplabc18/v3.47/bin//..//h/p18cxxx.h"
 
 #line 3 "C:/Program Files (x86)/Microchip/mplabc18/v3.47/bin//..//h/p18cxxx.h"
@@ -5566,7 +5567,7 @@ extern          near unsigned char       TOSU;
 #line 597 "C:/Program Files (x86)/Microchip/mplabc18/v3.47/bin//..//h/p18cxxx.h"
 
 #line 599 "C:/Program Files (x86)/Microchip/mplabc18/v3.47/bin//..//h/p18cxxx.h"
-#line 7 "main.c"
+#line 8 "main.c"
 
 #line 1 "./\Common\J1939.h"
 
@@ -5808,7 +5809,7 @@ void 			J1939_Poll( unsigned long ElapsedTime );
 #line 395 "./\Common\J1939.h"
 
 
-#line 8 "main.c"
+#line 9 "main.c"
 
 #line 1 "./\Common\ecocar.h"
 
@@ -5889,7 +5890,7 @@ void putSerialData(char DataType, char DataMSB, char DataLSB);
 
 #line 82 "./\Common\ecocar.h"
 
-#line 9 "main.c"
+#line 10 "main.c"
 
 #line 1 "C:/Program Files (x86)/Microchip/mplabc18/v3.47/bin//..//h/delays.h"
 
@@ -6231,7 +6232,7 @@ void Delay1KTCYx(auto  unsigned char);
 void Delay10KTCYx(auto  unsigned char);
 
 #line 56 "C:/Program Files (x86)/Microchip/mplabc18/v3.47/bin//..//h/delays.h"
-#line 10 "main.c"
+#line 11 "main.c"
 
 #pragma config OSC = IRCIO67    
 #pragma config BOREN = OFF      
@@ -6239,10 +6240,41 @@ void Delay10KTCYx(auto  unsigned char);
 
 
 
-#line 18 "main.c"
+
+#line 20 "main.c"
  
+
+char InputRegister;
+
+#line 25 "main.c"
+#line 26 "main.c"
+#line 27 "main.c"
+#line 28 "main.c"
+#line 29 "main.c"
+
+
+
+ char ReadInputs()
+ {
+     
+     InputRegister = 0;
+     
+     
+     
+     
+     
+ }
+
+ char OutputRegister;
+ 
+#line 46 "main.c"
+#line 47 "main.c"
+#line 48 "main.c"
+#line 49 "main.c"
+#line 50 "main.c"
+
 int main(int argc, char** argv) {
 
-    return (EXIT_SUCCESS);
+    return() ;
 }
 

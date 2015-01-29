@@ -18,8 +18,42 @@
 /*
  * 
  */
+
+char InputRegister;
+//list of bits
+#define WIPER_SWITCH 0
+#define HAZ_SWITCH 1
+#define HORN_SWITCH 2
+#define BLINK_L_SWITCH 3
+#define BLINK_R_SWITCH 4
+//bits 5 , 6 and 7 unused
+
+
+ char ReadInputs()
+ {
+     //clear InputRegister
+     InputRegister = 0;
+     //check WIPER_SWITCH
+     //check HAZ_SWITCH
+     //check HORN_SWITCH
+     //check BLINK_L_SWITCH
+     //check BLINK_R_SWITCH
+     return(InputRegister);
+ }
+
+ char OutputRegister;
+ //list of bits
+#define HORN_FET 0
+#define BRK_L_HIGH 1
+#define BRK_R_HIGH 2
+#define BLINK_L 3
+#define BLINK_R 4
+//bits 5 , 6 7 unused
+
+
+
 int main(int argc, char** argv) {
 
-    return (EXIT_SUCCESS);
+    return() ;
 }
 
