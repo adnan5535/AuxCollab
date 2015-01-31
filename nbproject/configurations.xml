@@ -19,7 +19,15 @@
       <itemPath>Makefile</itemPath>
     </logicalFolder>
     <itemPath>main.c</itemPath>
+    <itemPath>J1939.C</itemPath>
+    <itemPath>J1939.H</itemPath>
+    <itemPath>ecocar.c</itemPath>
+    <itemPath>ecocar.h</itemPath>
+    <itemPath>j1939def.h</itemPath>
   </logicalFolder>
+  <sourceRootList>
+    <Elem>Common</Elem>
+  </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
     <conf name="default" type="2">

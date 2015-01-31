@@ -6,8 +6,8 @@
  */
 
 #include <p18cxxx.h>
-#include "\Common\J1939.h"
-#include "\Common\ecocar.h"
+#include "J1939.h"
+#include "ecocar.h"
 #include <delays.h>
 #pragma config OSC = IRCIO67    // Oscillator Selection Bit
 #pragma config BOREN = OFF      // Brown-out Reset disabled in hardware and software
@@ -50,10 +50,7 @@ char InputRegister;
 #define BLINK_R 4
 //bits 5 , 6 7 unused
 
-
-
-int main(int argc, char** argv) {
-
-    return() ;
-}
-
+ void main ()
+ {
+    
+ }
