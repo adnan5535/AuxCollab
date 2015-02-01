@@ -19,6 +19,7 @@
  * 
  */
 
+
 char InputRegister;
 //list of bits
 #define WIPER_SWITCH 0
@@ -29,15 +30,56 @@ char InputRegister;
 //bits 5 , 6 and 7 unused
 
 
- char ReadInputs()
+
+char ReadInputs()
  {
      //clear InputRegister
      InputRegister = 0;
      //check WIPER_SWITCH
+     if(TRISCbits.TRISC4 == 1)
+     {
+         InputRegister |= (1 << WIPER_SWITCH);
+     }
+     else
+     {
+         InputRegister &= ~(1 << WIPER_SWITCH);
+     }
      //check HAZ_SWITCH
+     if(TRISCbits.TRISC5 == 1)
+     {
+         InputRegister |= (1 << HAZ_SWITCH);
+     }
+     else 
+     {
+         InputRegister &= ~(1 << HAZ_SWITCH);
+     }
      //check HORN_SWITCH
+     if(TRISBbits.TRISB0 == 1)
+     {
+         InputRegister |= (1 << HORN_SWITCH);
+     }
+     else 
+     {
+         InputRegister &= ~(1 << HORN_SWITCH);
+     }
      //check BLINK_L_SWITCH
+     if(TRISCbits.TRISC7 == 1)
+     {
+         InputRegister |= (1 << BLINK_L_SWITCH);
+     }
+     else 
+     {
+         InputRegister &= ~(1 << BLINK_L_SWITCH);
+     }
      //check BLINK_R_SWITCH
+     if(TRISCbits.TRISC6 == 1)
+     {
+         InputRegister |= (1 << BLINK_R_SWITCH);
+     }
+     else
+     {
+         InputRegister &= ~(1 << BLINK_R_SWITCH);
+     }
      return(InputRegister);
  }
 
@@ -50,7 +92,28 @@ char InputRegister;
 #define BLINK_R 4
 //bits 5 , 6 7 unused
 
- void main ()
+void HornOn(){
+    LATAbits.LATA0=1;
+}
+
+#pragma interrupt ISR
+void ISR()
+{
+    if (INTCONbits.INT0IE&&INTCONbits.INT0IF) //Horn input detected and horn turned on
+    {
+        HornOn();
+    }
+}
+
+void main ()
  {
-    
+     INTCONbits.INT0IE = 1; //enable int0
+     INTCON2bits.INTEDG0 = 1; //rising edge
+     INTCONbits.GIE = 1; //global interrupt enable
+
+     while(1)
+     {
+
+     }
+
  }
