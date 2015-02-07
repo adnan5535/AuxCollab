@@ -1,6 +1,6 @@
 /* 
  * File:   main.c
- * Author: Adnan
+ * Author: Adnan and Reegan
  *
  * Created on January 26, 2015, 6:28 PM
  */
@@ -99,7 +99,7 @@ void HornOn(){
 //////////////////THIS IS OUR INTERRUPT SERVICE ROUTINE/////////////////////////
 /* SOME THINGS TO KEEP IN MIND :
     Comments on the same line as the pragma statements here can cause problems*/
-#pragma interrupt ISR
+#pragma interrupt isr
 void isr()
 {
     if (INTCONbits.INT0IE&&INTCONbits.INT0IF) //Horn input detected and horn turned on
@@ -108,11 +108,11 @@ void isr()
     }
 }
 
-<<<<<<< HEAD
-=======
+
+
 //////////////////THIS IS OUR INTERRUPT/////////////////////////
 // This calls the interrupt service routine when the interrupt is called
->>>>>>> origin/master
+
 #pragma code high_vector = 0x08
 
 /* this 'function' can only be 8 bytes in length. This is why the code we want
@@ -121,19 +121,16 @@ void high_interrupt(void){
 
     /* This is an assembly instruction. This efficiently calls our interrupt
      * service routine */
-<<<<<<< HEAD
     _asm GOTO isr _endasm
 }
 
-=======
-    _asm GOTO ISR _endasm
-}
+
 
 /* There is actually a space at the end of this line and a line break after...
  * This is important for some strange reason */
 #pragma code
 
->>>>>>> origin/master
+
 void main ()
  {
      INTCONbits.INT0IE = 1; //enable int0
