@@ -96,6 +96,9 @@ void HornOn(){
     LATAbits.LATA0=1;
 }
 
+//////////////////THIS IS OUR INTERRUPT SERVICE ROUTINE/////////////////////////
+/* SOME THINGS TO KEEP IN MIND :
+    Comments on the same line as the pragma statements here can cause problems*/
 #pragma interrupt ISR
 void ISR()
 {
@@ -104,6 +107,23 @@ void ISR()
         HornOn();
     }
 }
+
+//////////////////THIS IS OUR INTERRUPT/////////////////////////
+// This calls the interrupt service routine when the interrupt is called
+#pragma code high_vector = 0x08
+
+/* this 'function' can only be 8 bytes in length. This is why the code we want
+ * to run with our interrupt will be put in the interrupt service routine   */
+void high_interrupt(void){
+
+    /* This is an assembly instruction. This efficiently calls our interrupt
+     * service routine */
+    _asm GOTO ISR _endasm
+}
+
+/* There is actually a space at the end of this line and a line break after...
+ * This is important for some strange reason */
+#pragma code
 
 void main ()
  {
