@@ -96,16 +96,50 @@ void HornOn(){
     LATAbits.LATA0=1;
 }
 
+
+
+void main ()
+ {
+    InitEcoCar();
+     INTCONbits.INT0IE = 1; //enable int0
+     INTCON2bits.INTEDG0 = 0; //falling edge
+     INTCONbits.INT0IF=0;
+     INTCONbits.GIE = 1; //global interrupt enable
+     TRISBbits.TRISB0 = 1;
+     TRISAbits.TRISA0 = 0;
+     while(1)
+     {
+
+     }
+     while(0)
+     {
+         if (PORTBbits.RB0 == 1)
+         {
+             HornOn();
+         }
+         else
+         {
+             LATAbits.LATA0 = 0;
+         }
+     }
+}
+
+
 //////////////////THIS IS OUR INTERRUPT SERVICE ROUTINE/////////////////////////
 /* SOME THINGS TO KEEP IN MIND :
     Comments on the same line as the pragma statements here can cause problems*/
 #pragma interrupt isr
-void isr()
+void isr(void)
 {
+    
     if (INTCONbits.INT0IE&&INTCONbits.INT0IF) //Horn input detected and horn turned on
     {
+
+        INTCONbits.INT0IF=0;
         HornOn();
+
     }
+
 }
 
 
@@ -130,16 +164,3 @@ void high_interrupt(void){
  * This is important for some strange reason */
 #pragma code
 
-
-void main ()
- {
-     INTCONbits.INT0IE = 1; //enable int0
-     INTCON2bits.INTEDG0 = 1; //rising edge
-     INTCONbits.GIE = 1; //global interrupt enable
-
-     while(1)
-     {
-
-     }
-
- }

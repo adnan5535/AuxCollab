@@ -1,5 +1,5 @@
 MPLINK 5.00, LINKER
-Linker Map File - Created Sat Feb 07 14:48:38 2015
+Linker Map File - Created Sat Feb 07 14:42:26 2015
 
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
@@ -10,28 +10,28 @@ Linker Map File - Created Sat Feb 07 14:48:38 2015
                    .cinit    romdata   0x00000e    program   0x00000e
             .code_J1939.o       code   0x00001c    program   0x000892
            .code_ecocar.o       code   0x0008ae    program   0x0002a8
-             .code_main.o       code   0x000b56    program   0x0000f2
-               _cinit_scn       code   0x000c48    program   0x00009e
-             D10KTCYXCODE       code   0x000ce6    program   0x00002e
-           .code_uwrite.o       code   0x000d14    program   0x00002e
-                    .code       code   0x000d42    program   0x000020
-             _startup_scn       code   0x000d62    program   0x00001c
-          .romdata_main.o    romdata   0x000d7e    program   0x000005
-        .romdata_ecocar.o    romdata   0x000d83    program   0x000005
-         .romdata_J1939.o    romdata   0x000d88    program   0x000005
-         .idata_c018i.o_i    romdata   0x000d8d    program   0x000000
-         .romdata_c018i.o    romdata   0x000d8d    program   0x000000
-        .romdata___init.o    romdata   0x000d8d    program   0x000000
-        .idata___init.o_i    romdata   0x000d8d    program   0x000000
-         .romdata_udefs.o    romdata   0x000d8d    program   0x000000
-         .idata_udefs.o_i    romdata   0x000d8d    program   0x000000
-        .romdata_uwrite.o    romdata   0x000d8d    program   0x000000
-        .idata_uwrite.o_i    romdata   0x000d8d    program   0x000000
-          .idata_main.o_i    romdata   0x000d8d    program   0x000000
-        .idata_ecocar.o_i    romdata   0x000d8d    program   0x000000
-         .idata_J1939.o_i    romdata   0x000d8d    program   0x000001
-            .code_udefs.o       code   0x000d8e    program   0x000000
-            .code_c018i.o       code   0x000d8e    program   0x000000
+             .code_main.o       code   0x000b56    program   0x0000e8
+               _cinit_scn       code   0x000c3e    program   0x00009e
+             D10KTCYXCODE       code   0x000cdc    program   0x00002e
+           .code_uwrite.o       code   0x000d0a    program   0x00002e
+                    .code       code   0x000d38    program   0x000020
+             _startup_scn       code   0x000d58    program   0x00001c
+          .romdata_main.o    romdata   0x000d74    program   0x000005
+        .romdata_ecocar.o    romdata   0x000d79    program   0x000005
+         .romdata_J1939.o    romdata   0x000d7e    program   0x000005
+         .idata_c018i.o_i    romdata   0x000d83    program   0x000000
+         .romdata_c018i.o    romdata   0x000d83    program   0x000000
+        .romdata___init.o    romdata   0x000d83    program   0x000000
+        .idata___init.o_i    romdata   0x000d83    program   0x000000
+         .romdata_udefs.o    romdata   0x000d83    program   0x000000
+         .idata_udefs.o_i    romdata   0x000d83    program   0x000000
+        .romdata_uwrite.o    romdata   0x000d83    program   0x000000
+        .idata_uwrite.o_i    romdata   0x000d83    program   0x000000
+          .idata_main.o_i    romdata   0x000d83    program   0x000000
+        .idata_ecocar.o_i    romdata   0x000d83    program   0x000000
+         .idata_J1939.o_i    romdata   0x000d83    program   0x000001
+            .code_udefs.o       code   0x000d84    program   0x000000
+            .code_c018i.o       code   0x000d84    program   0x000000
     .config_300001_main.o    romdata   0x300001    program   0x000001
     .config_300002_main.o    romdata   0x300002    program   0x000001
     .config_300003_main.o    romdata   0x300003    program   0x000001
@@ -75,25 +75,25 @@ Linker Map File - Created Sat Feb 07 14:48:38 2015
                               Program Memory Usage 
                                Start         End      
                            ---------   ---------      
-                            0x000000    0x000d8d      
+                            0x000000    0x000d83      
                             0x300001    0x300003      
-            3473 out of 99352 program addresses used, program memory utilization is 3%
+            3463 out of 99352 program addresses used, program memory utilization is 3%
 
 
 
                               Symbols - Sorted by Name
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
-             BUFFER_TABLE   0x000d83    program     static C:\Users\Adnan\Eco Car\AuxCollab\J1939.H
-             BUFFER_TABLE   0x000d88    program     static C:\Users\Adnan\Eco Car\AuxCollab\J1939.H
-             BUFFER_TABLE   0x000d7e    program     static C:\Users\Adnan\Eco Car\AuxCollab\J1939.h
+             BUFFER_TABLE   0x000d79    program     static C:\Users\Adnan\Eco Car\AuxCollab\J1939.H
+             BUFFER_TABLE   0x000d7e    program     static C:\Users\Adnan\Eco Car\AuxCollab\J1939.H
+             BUFFER_TABLE   0x000d74    program     static C:\Users\Adnan\Eco Car\AuxCollab\J1939.h
            Broadcast_Data   0x0008ae    program     extern C:\Users\Adnan\Eco Car\AuxCollab\ecocar.c
               CompareName   0x00001c    program     extern C:\Users\Adnan\Eco Car\AuxCollab\J1939.C
                  CopyName   0x0000a8    program     extern C:\Users\Adnan\Eco Car\AuxCollab\J1939.C
-                   D10K_1   0x000cf2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-                    D10Kl   0x000cfe    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-                    D10Kx   0x000cf0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-             Delay10KTCYx   0x000ce6    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+                   D10K_1   0x000ce8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+                    D10Kl   0x000cf4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+                    D10Kx   0x000ce6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+             Delay10KTCYx   0x000cdc    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
                    HornOn   0x000b90    program     extern C:\Users\Adnan\Eco Car\AuxCollab\main.c
                InitEcoCar   0x000ab6    program     extern C:\Users\Adnan\Eco Car\AuxCollab\ecocar.c
 J1939_AddressClaimHandling   0x0002ba    program     static C:\Users\Adnan\Eco Car\AuxCollab\J1939.C
@@ -110,36 +110,36 @@ J1939_RequestForAddressClaimHandling   0x00079a    program     static C:\Users\A
          SetAddressFilter   0x00010e    program     extern C:\Users\Adnan\Eco Car\AuxCollab\J1939.C
               SetECANMode   0x0000ea    program     extern C:\Users\Adnan\Eco Car\AuxCollab\J1939.C
            Set_Oscillator   0x000aa2    program     extern C:\Users\Adnan\Eco Car\AuxCollab\ecocar.c
-               WriteUSART   0x000d14    program     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\USART\uwrite.c
-       _D10KTCYXCODE_0010   0x000cf6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-       _D10KTCYXCODE_001C   0x000d02    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+               WriteUSART   0x000d0a    program     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\USART\uwrite.c
+       _D10KTCYXCODE_0010   0x000cec    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+       _D10KTCYXCODE_001C   0x000cf8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
        ___return_lbl00000   0x000004    program     static                          
-       ___return_lbl00001   0x000d7c    program     static                          
-       ___return_lbl00002   0x000ce4    program     static                          
-       ___return_lbl00022   0x00000c    program     static                          
+       ___return_lbl00001   0x000d72    program     static                          
+       ___return_lbl00002   0x000cda    program     static                          
+       ___return_lbl00018   0x00000c    program     static                          
                __config_0   0x300001    program     static C:\Users\Adnan\Eco Car\AuxCollab\main.c
                __config_1   0x300002    program     static C:\Users\Adnan\Eco Car\AuxCollab\main.c
                __config_2   0x300003    program     static C:\Users\Adnan\Eco Car\AuxCollab\main.c
                    __init   0x000006    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\__init.c
-            __zero_memory   0x000d42    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                _do_cinit   0x000c48    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+            __zero_memory   0x000d38    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                _do_cinit   0x000c3e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
                    _entry   0x000000    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                 _startup   0x000d62    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                compare_l   0x000d58    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                copy_loop   0x000cba    program     static                          
-            copy_one_byte   0x000cc0    program     static                          
-                     done   0x000ce4    program     static                          
-             done_copying   0x000cce    program     static                          
+                 _startup   0x000d58    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                compare_l   0x000d4e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                copy_loop   0x000cb0    program     static                          
+            copy_one_byte   0x000cb6    program     static                          
+                     done   0x000cda    program     static                          
+             done_copying   0x000cc4    program     static                          
            high_interrupt   0x000008    program     extern C:\Users\Adnan\Eco Car\AuxCollab\main.c
-                      isr   0x000ba6    program     extern C:\Users\Adnan\Eco Car\AuxCollab\main.c
-                     loop   0x000d72    program     static                          
-                   loop_h   0x000d50    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                   loop_l   0x000d5a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                      isr   0x000baa    program     extern C:\Users\Adnan\Eco Car\AuxCollab\main.c
+                     loop   0x000d68    program     static                          
+                   loop_h   0x000d46    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                   loop_l   0x000d50    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                      main   0x000b94    program     extern C:\Users\Adnan\Eco Car\AuxCollab\main.c
             putSerialData   0x000aec    program     extern C:\Users\Adnan\Eco Car\AuxCollab\ecocar.c
                  putUSART   0x000acc    program     extern C:\Users\Adnan\Eco Car\AuxCollab\ecocar.c
-                     test   0x000c62    program     static                          
-               zero_block   0x000d50    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                     test   0x000c58    program     static                          
+               zero_block   0x000d46    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                    ADCON0   0x000fc2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                ADCON0bits   0x000fc2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                    ADCON1   0x000fc1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
@@ -895,7 +895,7 @@ J1939_RequestForAddressClaimHandling   0x00079a    program     static C:\Users\A
        ___return_lbl00000   0x000004    program     static                          
                    __init   0x000006    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\__init.c
            high_interrupt   0x000008    program     extern C:\Users\Adnan\Eco Car\AuxCollab\main.c
-       ___return_lbl00022   0x00000c    program     static                          
+       ___return_lbl00018   0x00000c    program     static                          
               CompareName   0x00001c    program     extern C:\Users\Adnan\Eco Car\AuxCollab\J1939.C
                  CopyName   0x0000a8    program     extern C:\Users\Adnan\Eco Car\AuxCollab\J1939.C
               SetECANMode   0x0000ea    program     extern C:\Users\Adnan\Eco Car\AuxCollab\J1939.C
@@ -918,32 +918,32 @@ J1939_RequestForAddressClaimHandling   0x00079a    program     static C:\Users\A
                ReadInputs   0x000b56    program     extern C:\Users\Adnan\Eco Car\AuxCollab\main.c
                    HornOn   0x000b90    program     extern C:\Users\Adnan\Eco Car\AuxCollab\main.c
                      main   0x000b94    program     extern C:\Users\Adnan\Eco Car\AuxCollab\main.c
-                      isr   0x000ba6    program     extern C:\Users\Adnan\Eco Car\AuxCollab\main.c
-                _do_cinit   0x000c48    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                     test   0x000c62    program     static                          
-                copy_loop   0x000cba    program     static                          
-            copy_one_byte   0x000cc0    program     static                          
-             done_copying   0x000cce    program     static                          
-                     done   0x000ce4    program     static                          
-       ___return_lbl00002   0x000ce4    program     static                          
-             Delay10KTCYx   0x000ce6    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-                    D10Kx   0x000cf0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-                   D10K_1   0x000cf2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-       _D10KTCYXCODE_0010   0x000cf6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-                    D10Kl   0x000cfe    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-       _D10KTCYXCODE_001C   0x000d02    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-               WriteUSART   0x000d14    program     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\USART\uwrite.c
-            __zero_memory   0x000d42    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                   loop_h   0x000d50    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-               zero_block   0x000d50    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                compare_l   0x000d58    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                   loop_l   0x000d5a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                 _startup   0x000d62    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                     loop   0x000d72    program     static                          
-       ___return_lbl00001   0x000d7c    program     static                          
-             BUFFER_TABLE   0x000d7e    program     static C:\Users\Adnan\Eco Car\AuxCollab\J1939.h
-             BUFFER_TABLE   0x000d83    program     static C:\Users\Adnan\Eco Car\AuxCollab\J1939.H
-             BUFFER_TABLE   0x000d88    program     static C:\Users\Adnan\Eco Car\AuxCollab\J1939.H
+                      isr   0x000baa    program     extern C:\Users\Adnan\Eco Car\AuxCollab\main.c
+                _do_cinit   0x000c3e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                     test   0x000c58    program     static                          
+                copy_loop   0x000cb0    program     static                          
+            copy_one_byte   0x000cb6    program     static                          
+             done_copying   0x000cc4    program     static                          
+                     done   0x000cda    program     static                          
+       ___return_lbl00002   0x000cda    program     static                          
+             Delay10KTCYx   0x000cdc    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+                    D10Kx   0x000ce6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+                   D10K_1   0x000ce8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+       _D10KTCYXCODE_0010   0x000cec    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+                    D10Kl   0x000cf4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+       _D10KTCYXCODE_001C   0x000cf8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+               WriteUSART   0x000d0a    program     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\USART\uwrite.c
+            __zero_memory   0x000d38    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                   loop_h   0x000d46    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+               zero_block   0x000d46    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                compare_l   0x000d4e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                   loop_l   0x000d50    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                 _startup   0x000d58    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                     loop   0x000d68    program     static                          
+       ___return_lbl00001   0x000d72    program     static                          
+             BUFFER_TABLE   0x000d74    program     static C:\Users\Adnan\Eco Car\AuxCollab\J1939.h
+             BUFFER_TABLE   0x000d79    program     static C:\Users\Adnan\Eco Car\AuxCollab\J1939.H
+             BUFFER_TABLE   0x000d7e    program     static C:\Users\Adnan\Eco Car\AuxCollab\J1939.H
                __config_0   0x300001    program     static C:\Users\Adnan\Eco Car\AuxCollab\main.c
                __config_1   0x300002    program     static C:\Users\Adnan\Eco Car\AuxCollab\main.c
                __config_2   0x300003    program     static C:\Users\Adnan\Eco Car\AuxCollab\main.c
