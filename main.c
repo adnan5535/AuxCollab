@@ -36,7 +36,7 @@ char ReadInputs()
      //clear InputRegister
      InputRegister = 0;
      //check WIPER_SWITCH
-     if(TRISCbits.TRISC4 == 1)
+     if(PORTCbits.RC4 == 1)
      {
          InputRegister |= (1 << WIPER_SWITCH);
      }
@@ -45,7 +45,7 @@ char ReadInputs()
          InputRegister &= ~(1 << WIPER_SWITCH);
      }
      //check HAZ_SWITCH
-     if(TRISCbits.TRISC5 == 1)
+     if(PORTCbits.RC5 == 1)
      {
          InputRegister |= (1 << HAZ_SWITCH);
      }
@@ -54,7 +54,7 @@ char ReadInputs()
          InputRegister &= ~(1 << HAZ_SWITCH);
      }
      //check HORN_SWITCH
-     if(TRISBbits.TRISB0 == 1)
+     if(PORTBbits.RB0 == 1)
      {
          InputRegister |= (1 << HORN_SWITCH);
      }
@@ -63,7 +63,7 @@ char ReadInputs()
          InputRegister &= ~(1 << HORN_SWITCH);
      }
      //check BLINK_L_SWITCH
-     if(TRISCbits.TRISC7 == 1)
+     if(PORTCbits.RC7 == 1)
      {
          InputRegister |= (1 << BLINK_L_SWITCH);
      }
@@ -72,7 +72,7 @@ char ReadInputs()
          InputRegister &= ~(1 << BLINK_L_SWITCH);
      }
      //check BLINK_R_SWITCH
-     if(TRISCbits.TRISC6 == 1)
+     if(PORTCbits.RC6 == 1)
      {
          InputRegister |= (1 << BLINK_R_SWITCH);
      }
