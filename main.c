@@ -97,12 +97,23 @@ void HornOn(){
 }
 
 #pragma interrupt ISR
-void ISR()
+void isr()
 {
     if (INTCONbits.INT0IE&&INTCONbits.INT0IF) //Horn input detected and horn turned on
     {
         HornOn();
     }
+}
+
+#pragma code high_vector = 0x08
+
+/* this 'function' can only be 8 bytes in length. This is why the code we want
+ * to run with our interrupt will be put in the interrupt service routine   */
+void high_interrupt(void){
+
+    /* This is an assembly instruction. This efficiently calls our interrupt
+     * service routine */
+    _asm GOTO isr _endasm
 }
 
 void main ()
