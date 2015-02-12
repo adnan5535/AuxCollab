@@ -109,31 +109,33 @@ void Horn(char Horn_Input)
 
 void main ()
  {
-     InitEcoCar();
+     InitEcoCar(); //disables a bunch of stuff
 
      //set up int0
      INTCONbits.INT0IE = 1; //enable int0     
      INTCONbits.INT0IF=0; //set flag to 0
      INTCON2bits.INTEDG0 = 1; //set to rising edge
 
+     //setup int1
+     //setup int2
+     //setup timer interrupts
+
      INTCONbits.GIE = 1; //global interrupt enable
 
-     TRISBbits.TRISB0 = 1;
-     TRISAbits.TRISA0 = 0;
+     //set up input/ouputs
+     TRISBbits.TRISB0 = 1;//HORN_SWITCH input
+     TRISAbits.TRISA0 = 0; //HORN_FET output
+     //other inputs
+     TRISCbits.TRISC4 = 1;  //put description here
+     TRISCbits.TRISC5 = 1;
+     TRISCbits.TRISC6 = 1;
+     TRISCbits.TRISC7 = 1;
+     //other outputs
+
+     //loop forever
      while(1)
      {
 
-     }
-     while(0)
-     {
-         if (PORTBbits.RB0 == 1)
-         {
-             Horn(ON);
-         }
-         else
-         {
-             LATAbits.LATA0 = 0;
-         }
      }
 }
 
@@ -150,23 +152,30 @@ void isr(void)
         if(INTCON2bits.INTEDG0 = 1) //if rising edge interrupt
         {
             Horn(ON); //turn horn on
-            INTCON2bits.INTEDG0 = 0; // set to falling edge
+            INTCON2bits.INTEDG0 = 0; // set to falling edge interrupt
         }
         else   //if falling edge interrupt
         {
             Horn(OFF); //turn horn off
-            INTCON2bits.INTEDG0 = 1; //set to rising edge
+            INTCON2bits.INTEDG0 = 1; //set to rising edge interrupt
         }
         INTCONbits.INT0IF=0; //clear interrupt flag
-
-        //small delay for debouncing button
-        //change this value
-        Delay1KTCYx(0); //delay for 256000 clock cycles
     }
-
+    else if (0)
+    {
+        //check next flag
+    }
+    else if (0)
+    {
+        //check next flag
+    }
+    else
+    {
+        //check last flag
+    }
     INTCONbits.GIE = 1; //enable interrupts
 }
-//////////////////////////////////////////////////////////////////
+
 
 
 //////////////////THIS IS OUR INTERRUPT/////////////////////////
@@ -187,4 +196,3 @@ void high_interrupt(void){
  * This is important for some strange reason */
 #pragma code
 
-////////////////////////////////////////////////////////////////
