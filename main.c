@@ -18,7 +18,8 @@
 /*
  * 
  */
-
+const char ON = 1;
+const char OFF = 0;
 
 char InputRegister;
 //list of bits
@@ -29,10 +30,9 @@ char InputRegister;
 #define BLINK_R_SWITCH 4
 //bits 5 , 6 and 7 unused
 
-
-
 char ReadInputs()
  {
+     INTCONbits.GIE = 0; //disable interrupts
      //clear InputRegister
      InputRegister = 0;
      //check WIPER_SWITCH
@@ -80,6 +80,7 @@ char ReadInputs()
      {
          InputRegister &= ~(1 << BLINK_R_SWITCH);
      }
+     INTCONbits.GIE = 1; //enable interrupts
      return(InputRegister);
  }
 
@@ -92,19 +93,31 @@ char ReadInputs()
 #define BLINK_R 4
 //bits 5 , 6 7 unused
 
-void HornOn(){
-    LATAbits.LATA0=1;
+void Horn(char Horn_Input)
+{
+    if (Horn_Input == ON)
+    {
+        LATAbits.LATA0 = 1;
+    }
+    else
+    {
+        LATAbits.LATA0 = 0;
+    }
 }
 
 
 
 void main ()
  {
-    InitEcoCar();
-     INTCONbits.INT0IE = 1; //enable int0
-     INTCON2bits.INTEDG0 = 0; //falling edge
-     INTCONbits.INT0IF=0;
+     InitEcoCar();
+
+     //set up int0
+     INTCONbits.INT0IE = 1; //enable int0     
+     INTCONbits.INT0IF=0; //set flag to 0
+     INTCON2bits.INTEDG0 = 1; //set to rising edge
+
      INTCONbits.GIE = 1; //global interrupt enable
+
      TRISBbits.TRISB0 = 1;
      TRISAbits.TRISA0 = 0;
      while(1)
@@ -115,7 +128,7 @@ void main ()
      {
          if (PORTBbits.RB0 == 1)
          {
-             HornOn();
+             Horn(ON);
          }
          else
          {
@@ -130,18 +143,30 @@ void main ()
     Comments on the same line as the pragma statements here can cause problems*/
 #pragma interrupt isr
 void isr(void)
-{
-    
-    if (INTCONbits.INT0IE&&INTCONbits.INT0IF) //Horn input detected and horn turned on
+{    
+    INTCONbits.GIE = 0; //disable interrupts
+    if (INTCONbits.INT0IE&&INTCONbits.INT0IF) //Horn interrupt detected and horn turned interrupt on
     {
+        if(INTCON2bits.INTEDG0 = 1) //if rising edge interrupt
+        {
+            Horn(ON); //turn horn on
+            INTCON2bits.INTEDG0 = 0; // set to falling edge
+        }
+        else   //if falling edge interrupt
+        {
+            Horn(OFF); //turn horn off
+            INTCON2bits.INTEDG0 = 1; //set to rising edge
+        }
+        INTCONbits.INT0IF=0; //clear interrupt flag
 
-        INTCONbits.INT0IF=0;
-        HornOn();
-
+        //small delay for debouncing button
+        //change this value
+        Delay1KTCYx(0); //delay for 256000 clock cycles
     }
 
+    INTCONbits.GIE = 1; //enable interrupts
 }
-
+//////////////////////////////////////////////////////////////////
 
 
 //////////////////THIS IS OUR INTERRUPT/////////////////////////
@@ -158,9 +183,8 @@ void high_interrupt(void){
     _asm GOTO isr _endasm
 }
 
-
-
 /* There is actually a space at the end of this line and a line break after...
  * This is important for some strange reason */
 #pragma code
 
+////////////////////////////////////////////////////////////////
