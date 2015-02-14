@@ -18,6 +18,8 @@
 /*
  * 
  */
+
+
 #define ON 1
 #define OFF 0
 
@@ -123,6 +125,7 @@ void Brake(char Brake_Input) //turns brake lights on and off
     }
 }
 
+
 void main ()
  {
      InitEcoCar(); //disables a bunch of stuff
@@ -136,13 +139,13 @@ void main ()
      TRISCbits.TRISC1 = 0; //BRK_R_HIGH output
 
      //other inputs
-     TRISCbits.TRISC4 = 1;  //put description here
+     TRISCbits.TRISC4 = 1; //Wipers Switch input
      TRISCbits.TRISC5 = 1;
      TRISCbits.TRISC6 = 1;
      TRISCbits.TRISC7 = 1;
 
      //other outputs
-
+     TRISCbits.TRISC2=0; //SERVO (For the Wipers)
 
      //enable interrupt priorities
      RCONbits.IPEN = 1;
@@ -159,18 +162,40 @@ void main ()
      INTCON2bits.INTEDG1 = 1; //rising edge
      INTCON3bits.INT1IP = 1; //high priority
 
-     //setup timer interrupts
+     //setup timer1 interrupts for millis function
 
      //enable high level interrupts
      INTCONbits.GIE = 1;
 
      //enable low level interrupts
-     //INTCONbits.GIEL = 1;
+     INTCONbits.GIEL = 1;
 
+     //wiper variables
+     int Angle=0;
+     int Target=0;
+     int LeftEdge=0;
+     int RightEdge=90;
+     int CurrentTime;
+     int PrevServoTime;
+     int ServoPeriod;
      //loop forever
      while(1)
      {
+         if(((PORTCbits.RC4 == 1) || (Angle!=LeftEdge)) && ((CurrentTime-PrevServoTime)>ServoPeriod))
+         {
+             if (Angle==Target)
+             {
+                 if(Target==RightEdge)
+                     Target=LeftEdge;
+                 else
+                     Target=RightEdge;
+             }
+             else if (Angle<Target)
+             {
 
+             }
+             //LATCbits.LATC2 = 1;
+         }
      }
 }
 
@@ -220,7 +245,14 @@ void isr(void)
     INTCONbits.GIE = 1; //enable interrupts
 }
 
-
+//////////////////THIS IS OUR LOW LEVEL INTERRUPT SERVICE ROUTINE/////////////////////////
+/* SOME THINGS TO KEEP IN MIND :
+    Comments on the same line as the pragma statements here can cause problems*/
+#pragma interrupt low_isr
+void low_isr(void)
+{
+    //check
+}
 
 //////////////////THIS IS OUR INTERRUPT/////////////////////////
 // This calls the interrupt service routine when the interrupt is called
@@ -240,3 +272,23 @@ void high_interrupt(void){
  * This is important for some strange reason */
 #pragma code
 
+
+
+
+//////////////////THIS IS OUR LOW LEVEL INTERRUPT/////////////////////////
+// This calls the interrupt service routine when the interrupt is called
+
+#pragma code high_vector = 0x18
+
+/* this 'function' can only be 8 bytes in length. This is why the code we want
+ * to run with our interrupt will be put in the interrupt service routine   */
+void low_interrupt(void){
+
+    /* This is an assembly instruction. This efficiently calls our interrupt
+     * service routine */
+    _asm GOTO low_isr _endasm
+}
+
+/* There is actually a space at the end of this line and a line break after...
+ * This is important for some strange reason */
+#pragma code
