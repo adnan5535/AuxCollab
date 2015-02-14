@@ -93,23 +93,56 @@ char ReadInputs()
 #define BLINK_R 4
 //bits 5 , 6 7 unused
 
-void Horn(char Horn_Input)
+void Horn(char Horn_Input) //turns horn on and off
 {
-    if (Horn_Input == ON)
+    if (Horn_Input)
     {
         LATAbits.LATA0 = 1;
+        OutputRegister |= (1 << HORN_FET);
     }
     else
     {
         LATAbits.LATA0 = 0;
+        OutputRegister &= ~(1 << HORN_FET);
     }
 }
 
-
+void Brake(char Brake_Input) //turns brake lights on and off
+{
+    if(Brake_Input)
+    {
+        LATCbits.LATC0 = 1;
+        LATCbits.LATC1 = 1;
+        OutputRegister |= (1 << BRK_L_HIGH) | (1 << BRK_R_HIGH);
+    }
+    else
+    {
+        LATCbits.LATC0 = 0;
+        LATCbits.LATC1 = 0;
+        OutputRegister &= ~( (1 << BRK_L_HIGH) | (1 << BRK_R_HIGH) );
+    }
+}
 
 void main ()
  {
      InitEcoCar(); //disables a bunch of stuff
+
+     //set up input/ouputs
+     TRISBbits.TRISB0 = 1;//HORN_SWITCH input
+     TRISAbits.TRISA0 = 0; //HORN_FET output
+
+     TRISBbits.TRISB1 = 1; //BRAKE_SWITCH input
+     TRISCbits.TRISC0 = 0; //BRK_L_HIGH output
+     TRISCbits.TRISC1 = 0; //BRK_R_HIGH output
+
+     //other inputs
+     TRISCbits.TRISC4 = 1;  //put description here
+     TRISCbits.TRISC5 = 1;
+     TRISCbits.TRISC6 = 1;
+     TRISCbits.TRISC7 = 1;
+
+     //other outputs
+
 
      //enable interrupt priorities
      RCONbits.IPEN = 1;
@@ -133,22 +166,6 @@ void main ()
 
      //enable low level interrupts
      //INTCONbits.GIEL = 1;
-
-
-     //set up input/ouputs
-     TRISBbits.TRISB0 = 1;//HORN_SWITCH input
-     TRISAbits.TRISA0 = 0; //HORN_FET output
-
-     TRISBbits.TRISB1 = 1; //BRAKE_SWITCH input
-     TRISCbits.TRISC0 = 0; //BRK_L_HIGH output
-     TRISCbits.TRISC1 = 0; //BRK_R_HIGH output
-
-     //other inputs
-     TRISCbits.TRISC4 = 1;  //put description here
-     TRISCbits.TRISC5 = 1;
-     TRISCbits.TRISC6 = 1;
-     TRISCbits.TRISC7 = 1;
-     //other outputs
 
      //loop forever
      while(1)
@@ -183,12 +200,12 @@ void isr(void)
     {
         if(INTCON2bits.INTEDG1) //if rising edge interrupt
         {
-            //Brakes on
+            Brake(ON); //turn on brake lights
             INTCON2bits.INTEDG1 = 0; //set to falling edge interrupt
         }
         else   //if falling edge interrupt
         {
-            //brakes off
+            Brake(OFF); //turn off brake lights
             INTCON2bits.INTEDG1 = 1; //set to rising edge
         }
     }
