@@ -18,8 +18,8 @@
 /*
  * 
  */
-const char ON = 1;
-const char OFF = 0;
+#define ON 1
+#define OFF 0
 
 char InputRegister;
 //list of bits
@@ -111,20 +111,38 @@ void main ()
  {
      InitEcoCar(); //disables a bunch of stuff
 
+     //enable interrupt priorities
+     RCONbits.IPEN = 1;
+
      //set up int0
      INTCONbits.INT0IE = 1; //enable int0     
      INTCONbits.INT0IF=0; //set flag to 0
      INTCON2bits.INTEDG0 = 1; //set to rising edge
+     //is always high priority
 
      //setup int1
-     //setup int2
+     INTCON3bits.INT1IE = 1; //enable
+     INTCON3bits.INT1IF = 0; //clear flag
+     INTCON2bits.INTEDG1 = 1; //rising edge
+     INTCON3bits.INT1IP = 1; //high priority
+
      //setup timer interrupts
 
-     INTCONbits.GIE = 1; //global interrupt enable
+     //enable high level interrupts
+     INTCONbits.GIE = 1;
+
+     //enable low level interrupts
+     //INTCONbits.GIEL = 1;
+
 
      //set up input/ouputs
      TRISBbits.TRISB0 = 1;//HORN_SWITCH input
      TRISAbits.TRISA0 = 0; //HORN_FET output
+
+     TRISBbits.TRISB1 = 1; //BRAKE_SWITCH input
+     TRISCbits.TRISC0 = 0; //BRK_L_HIGH output
+     TRISCbits.TRISC1 = 0; //BRK_R_HIGH output
+
      //other inputs
      TRISCbits.TRISC4 = 1;  //put description here
      TRISCbits.TRISC5 = 1;
@@ -147,9 +165,9 @@ void main ()
 void isr(void)
 {    
     INTCONbits.GIE = 0; //disable interrupts
-    if (INTCONbits.INT0IE&&INTCONbits.INT0IF) //Horn interrupt detected and horn turned interrupt on
+    if (INTCONbits.INT0IE&&INTCONbits.INT0IF) //Horn interrupt detected and turned on
     {
-        if(INTCON2bits.INTEDG0 = 1) //if rising edge interrupt
+        if(INTCON2bits.INTEDG0) //if rising edge interrupt
         {
             Horn(ON); //turn horn on
             INTCON2bits.INTEDG0 = 0; // set to falling edge interrupt
@@ -161,9 +179,18 @@ void isr(void)
         }
         INTCONbits.INT0IF=0; //clear interrupt flag
     }
-    else if (0)
+    else if (INTCON3bits.INT1IE&&INTCON3bits.INT1IF) //Brake interrupt detected and turned on
     {
-        //check next flag
+        if(INTCON2bits.INTEDG1) //if rising edge interrupt
+        {
+            //Brakes on
+            INTCON2bits.INTEDG1 = 0; //set to falling edge interrupt
+        }
+        else   //if falling edge interrupt
+        {
+            //brakes off
+            INTCON2bits.INTEDG1 = 1; //set to rising edge
+        }
     }
     else if (0)
     {

@@ -1,5 +1,5 @@
 MPLINK 5.00, LINKER
-Linker Map File - Created Thu Feb 12 14:40:30 2015
+Linker Map File - Created Sat Feb 14 09:47:18 2015
 
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
@@ -7,31 +7,31 @@ Linker Map File - Created Thu Feb 12 14:40:30 2015
                _entry_scn       code   0x000000    program   0x000006
            .code___init.o       code   0x000006    program   0x000002
               high_vector       code   0x000008    program   0x000006
-                   .cinit    romdata   0x00000e    program   0x00001a
-            .code_J1939.o       code   0x000028    program   0x000680
-           .code_ecocar.o       code   0x0006a8    program   0x0001b8
-             .code_main.o       code   0x000860    program   0x00013a
-               _cinit_scn       code   0x00099a    program   0x00009e
-             D10KTCYXCODE       code   0x000a38    program   0x00002e
-           .code_uwrite.o       code   0x000a66    program   0x00002e
-                    .code       code   0x000a94    program   0x000020
-             _startup_scn       code   0x000ab4    program   0x00001c
-          .romdata_main.o    romdata   0x000ad0    program   0x000005
-        .romdata_ecocar.o    romdata   0x000ad5    program   0x000005
-         .romdata_J1939.o    romdata   0x000ada    program   0x000005
-         .romdata_c018i.o    romdata   0x000adf    program   0x000000
-        .romdata___init.o    romdata   0x000adf    program   0x000000
-         .romdata_udefs.o    romdata   0x000adf    program   0x000000
-         .idata_udefs.o_i    romdata   0x000adf    program   0x000000
-          .idata_main.o_i    romdata   0x000adf    program   0x000002
-        .idata_uwrite.o_i    romdata   0x000adf    program   0x000000
-        .romdata_uwrite.o    romdata   0x000adf    program   0x000000
-         .idata_c018i.o_i    romdata   0x000ae1    program   0x000000
-        .idata___init.o_i    romdata   0x000ae1    program   0x000000
-        .idata_ecocar.o_i    romdata   0x000ae1    program   0x000000
-         .idata_J1939.o_i    romdata   0x000ae1    program   0x000001
-            .code_udefs.o       code   0x000ae2    program   0x000000
-            .code_c018i.o       code   0x000ae2    program   0x000000
+                   .cinit    romdata   0x00000e    program   0x00000e
+            .code_J1939.o       code   0x00001c    program   0x000680
+           .code_ecocar.o       code   0x00069c    program   0x0001b8
+             .code_main.o       code   0x000854    program   0x000158
+               _cinit_scn       code   0x0009ac    program   0x00009e
+             D10KTCYXCODE       code   0x000a4a    program   0x00002e
+           .code_uwrite.o       code   0x000a78    program   0x00002e
+                    .code       code   0x000aa6    program   0x000020
+             _startup_scn       code   0x000ac6    program   0x00001c
+          .romdata_main.o    romdata   0x000ae2    program   0x000005
+        .romdata_ecocar.o    romdata   0x000ae7    program   0x000005
+         .romdata_J1939.o    romdata   0x000aec    program   0x000005
+         .idata_c018i.o_i    romdata   0x000af1    program   0x000000
+         .romdata_c018i.o    romdata   0x000af1    program   0x000000
+        .romdata___init.o    romdata   0x000af1    program   0x000000
+        .idata___init.o_i    romdata   0x000af1    program   0x000000
+         .romdata_udefs.o    romdata   0x000af1    program   0x000000
+         .idata_udefs.o_i    romdata   0x000af1    program   0x000000
+        .romdata_uwrite.o    romdata   0x000af1    program   0x000000
+        .idata_uwrite.o_i    romdata   0x000af1    program   0x000000
+          .idata_main.o_i    romdata   0x000af1    program   0x000000
+        .idata_ecocar.o_i    romdata   0x000af1    program   0x000000
+         .idata_J1939.o_i    romdata   0x000af1    program   0x000001
+            .code_udefs.o       code   0x000af2    program   0x000000
+            .code_c018i.o       code   0x000af2    program   0x000000
     .config_300001_main.o    romdata   0x300001    program   0x000001
     .config_300002_main.o    romdata   0x300002    program   0x000001
     .config_300003_main.o    romdata   0x300003    program   0x000001
@@ -42,17 +42,17 @@ Linker Map File - Created Thu Feb 12 14:40:30 2015
            .udata_J1939.o      udata   0x000060       data   0x000056
            .udata_c018i.o      udata   0x0000b6       data   0x00000a
             .udata_main.o      udata   0x0000c0       data   0x000002
-            .idata_main.o      idata   0x0000c2       data   0x000002
-           .udata_udefs.o      udata   0x0000c4       data   0x000001
-           .idata_J1939.o      idata   0x0000c5       data   0x000001
-          .udata_ecocar.o      udata   0x0000c6       data   0x000000
-          .idata_ecocar.o      idata   0x0000c6       data   0x000000
-          .idata___init.o      idata   0x0000c6       data   0x000000
-          .udata___init.o      udata   0x0000c6       data   0x000000
-           .idata_udefs.o      idata   0x0000c6       data   0x000000
-          .idata_uwrite.o      idata   0x0000c6       data   0x000000
-          .udata_uwrite.o      udata   0x0000c6       data   0x000000
-           .idata_c018i.o      idata   0x0000c6       data   0x000000
+           .udata_udefs.o      udata   0x0000c2       data   0x000001
+           .idata_J1939.o      idata   0x0000c3       data   0x000001
+            .idata_main.o      idata   0x0000c4       data   0x000000
+          .udata_ecocar.o      udata   0x0000c4       data   0x000000
+          .idata_ecocar.o      idata   0x0000c4       data   0x000000
+          .idata___init.o      idata   0x0000c4       data   0x000000
+          .udata___init.o      udata   0x0000c4       data   0x000000
+           .idata_udefs.o      idata   0x0000c4       data   0x000000
+          .idata_uwrite.o      idata   0x0000c4       data   0x000000
+          .udata_uwrite.o      udata   0x0000c4       data   0x000000
+           .idata_c018i.o      idata   0x0000c4       data   0x000000
                    .stack      udata   0x000c00       data   0x000100
               SFR_BANKED0      udata   0x000d60       data   0x00000c
               SFR_BANKED1      udata   0x000d70       data   0x00000c
@@ -75,101 +75,101 @@ Linker Map File - Created Thu Feb 12 14:40:30 2015
                               Program Memory Usage 
                                Start         End      
                            ---------   ---------      
-                            0x000000    0x000ae1      
+                            0x000000    0x000af1      
                             0x300001    0x300003      
-            2789 out of 99352 program addresses used, program memory utilization is 2%
+            2805 out of 99352 program addresses used, program memory utilization is 2%
 
 
 
                               Symbols - Sorted by Name
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
-             BUFFER_TABLE   0x000ada    program     static G:\Documents\AuxCollab\J1939.H
-             BUFFER_TABLE   0x000ad5    program     static G:\Documents\AuxCollab\J1939.H
-             BUFFER_TABLE   0x000ad0    program     static G:\Documents\AuxCollab\J1939.h
-           Broadcast_Data   0x0006a8    program     extern G:\Documents\AuxCollab\ecocar.c
-              CompareName   0x000028    program     extern G:\Documents\AuxCollab\J1939.C
-                 CopyName   0x000064    program     extern G:\Documents\AuxCollab\J1939.C
-                   D10K_1   0x000a44    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-                    D10Kl   0x000a50    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-                    D10Kx   0x000a42    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-             Delay10KTCYx   0x000a38    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-                     Horn   0x00089e    program     extern G:\Documents\AuxCollab\main.c
-               InitEcoCar   0x00076e    program     extern G:\Documents\AuxCollab\ecocar.c
-J1939_AddressClaimHandling   0x000194    program     static G:\Documents\AuxCollab\J1939.C
-     J1939_DequeueMessage   0x0001fa    program     extern G:\Documents\AuxCollab\J1939.C
-     J1939_EnqueueMessage   0x00022c    program     extern G:\Documents\AuxCollab\J1939.C
-     J1939_Initialization   0x000260    program     extern G:\Documents\AuxCollab\J1939.C
-               J1939_Poll   0x000312    program     extern G:\Documents\AuxCollab\J1939.C
-    J1939_ReceiveMessages   0x000364    program     static G:\Documents\AuxCollab\J1939.C
-J1939_RequestForAddressClaimHandling   0x000482    program     static G:\Documents\AuxCollab\J1939.C
-   J1939_TransmitMessages   0x00049a    program     static G:\Documents\AuxCollab\J1939.C
-               ReadInputs   0x000860    program     extern G:\Documents\AuxCollab\main.c
-             Request_Data   0x000730    program     extern G:\Documents\AuxCollab\ecocar.c
-           SendOneMessage   0x0000bc    program     extern G:\Documents\AuxCollab\J1939.C
-         SetAddressFilter   0x0000a4    program     extern G:\Documents\AuxCollab\J1939.C
-              SetECANMode   0x00008c    program     extern G:\Documents\AuxCollab\J1939.C
-           Set_Oscillator   0x00075a    program     extern G:\Documents\AuxCollab\ecocar.c
-               WriteUSART   0x000a66    program     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\USART\uwrite.c
-       _D10KTCYXCODE_0010   0x000a48    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-       _D10KTCYXCODE_001C   0x000a54    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+             BUFFER_TABLE   0x000aec    program     static G:\Documents\AuxCollab\J1939.H
+             BUFFER_TABLE   0x000ae7    program     static G:\Documents\AuxCollab\J1939.H
+             BUFFER_TABLE   0x000ae2    program     static G:\Documents\AuxCollab\J1939.h
+           Broadcast_Data   0x00069c    program     extern G:\Documents\AuxCollab\ecocar.c
+              CompareName   0x00001c    program     extern G:\Documents\AuxCollab\J1939.C
+                 CopyName   0x000058    program     extern G:\Documents\AuxCollab\J1939.C
+                   D10K_1   0x000a56    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+                    D10Kl   0x000a62    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+                    D10Kx   0x000a54    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+             Delay10KTCYx   0x000a4a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+                     Horn   0x000892    program     extern G:\Documents\AuxCollab\main.c
+               InitEcoCar   0x000762    program     extern G:\Documents\AuxCollab\ecocar.c
+J1939_AddressClaimHandling   0x000188    program     static G:\Documents\AuxCollab\J1939.C
+     J1939_DequeueMessage   0x0001ee    program     extern G:\Documents\AuxCollab\J1939.C
+     J1939_EnqueueMessage   0x000220    program     extern G:\Documents\AuxCollab\J1939.C
+     J1939_Initialization   0x000254    program     extern G:\Documents\AuxCollab\J1939.C
+               J1939_Poll   0x000306    program     extern G:\Documents\AuxCollab\J1939.C
+    J1939_ReceiveMessages   0x000358    program     static G:\Documents\AuxCollab\J1939.C
+J1939_RequestForAddressClaimHandling   0x000476    program     static G:\Documents\AuxCollab\J1939.C
+   J1939_TransmitMessages   0x00048e    program     static G:\Documents\AuxCollab\J1939.C
+               ReadInputs   0x000854    program     extern G:\Documents\AuxCollab\main.c
+             Request_Data   0x000724    program     extern G:\Documents\AuxCollab\ecocar.c
+           SendOneMessage   0x0000b0    program     extern G:\Documents\AuxCollab\J1939.C
+         SetAddressFilter   0x000098    program     extern G:\Documents\AuxCollab\J1939.C
+              SetECANMode   0x000080    program     extern G:\Documents\AuxCollab\J1939.C
+           Set_Oscillator   0x00074e    program     extern G:\Documents\AuxCollab\ecocar.c
+               WriteUSART   0x000a78    program     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\USART\uwrite.c
+       _D10KTCYXCODE_0010   0x000a5a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+       _D10KTCYXCODE_001C   0x000a66    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
        ___return_lbl00000   0x000004    program     static                          
-       ___return_lbl00001   0x000ace    program     static                          
-       ___return_lbl00002   0x000a36    program     static                          
-       ___return_lbl00027   0x00000c    program     static                          
+       ___return_lbl00001   0x000ae0    program     static                          
+       ___return_lbl00002   0x000a48    program     static                          
+       ___return_lbl00030   0x00000c    program     static                          
                __config_0   0x300001    program     static G:\Documents\AuxCollab\main.c
                __config_1   0x300002    program     static G:\Documents\AuxCollab\main.c
                __config_2   0x300003    program     static G:\Documents\AuxCollab\main.c
                    __init   0x000006    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\__init.c
-                   __pa_0   0x0007d2    program     static G:\Documents\AuxCollab\ecocar.c
-                   __pa_0   0x00053c    program     static G:\Documents\AuxCollab\J1939.C
-                   __pa_1   0x00054a    program     static G:\Documents\AuxCollab\J1939.C
-                   __pa_1   0x0007e0    program     static G:\Documents\AuxCollab\ecocar.c
-                  __pa_10   0x000620    program     static G:\Documents\AuxCollab\J1939.C
-                  __pa_11   0x000632    program     static G:\Documents\AuxCollab\J1939.C
-                  __pa_12   0x000644    program     static G:\Documents\AuxCollab\J1939.C
-                  __pa_13   0x00064e    program     static G:\Documents\AuxCollab\J1939.C
-                  __pa_14   0x00065c    program     static G:\Documents\AuxCollab\J1939.C
-                  __pa_15   0x00066a    program     static G:\Documents\AuxCollab\J1939.C
-                  __pa_16   0x00067a    program     static G:\Documents\AuxCollab\J1939.C
-                  __pa_17   0x000682    program     static G:\Documents\AuxCollab\J1939.C
-                  __pa_18   0x000688    program     static G:\Documents\AuxCollab\J1939.C
-                  __pa_19   0x000694    program     static G:\Documents\AuxCollab\J1939.C
-                   __pa_2   0x000580    program     static G:\Documents\AuxCollab\J1939.C
-                   __pa_2   0x0007f0    program     static G:\Documents\AuxCollab\ecocar.c
-                  __pa_20   0x0006a0    program     static G:\Documents\AuxCollab\J1939.C
-                   __pa_3   0x000808    program     static G:\Documents\AuxCollab\ecocar.c
-                   __pa_3   0x0005b6    program     static G:\Documents\AuxCollab\J1939.C
-                   __pa_4   0x0005c0    program     static G:\Documents\AuxCollab\J1939.C
-                   __pa_4   0x000820    program     static G:\Documents\AuxCollab\ecocar.c
-                   __pa_5   0x0005c8    program     static G:\Documents\AuxCollab\J1939.C
-                   __pa_5   0x00082a    program     static G:\Documents\AuxCollab\ecocar.c
-                   __pa_6   0x0005dc    program     static G:\Documents\AuxCollab\J1939.C
-                   __pa_6   0x000832    program     static G:\Documents\AuxCollab\ecocar.c
-                   __pa_7   0x00083a    program     static G:\Documents\AuxCollab\ecocar.c
-                   __pa_7   0x0005e8    program     static G:\Documents\AuxCollab\J1939.C
-                   __pa_8   0x0005fe    program     static G:\Documents\AuxCollab\J1939.C
-                   __pa_8   0x000850    program     static G:\Documents\AuxCollab\ecocar.c
-                   __pa_9   0x00060c    program     static G:\Documents\AuxCollab\J1939.C
-            __zero_memory   0x000a94    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                _do_cinit   0x00099a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                   __pa_0   0x0007c6    program     static G:\Documents\AuxCollab\ecocar.c
+                   __pa_0   0x000530    program     static G:\Documents\AuxCollab\J1939.C
+                   __pa_1   0x00053e    program     static G:\Documents\AuxCollab\J1939.C
+                   __pa_1   0x0007d4    program     static G:\Documents\AuxCollab\ecocar.c
+                  __pa_10   0x000614    program     static G:\Documents\AuxCollab\J1939.C
+                  __pa_11   0x000626    program     static G:\Documents\AuxCollab\J1939.C
+                  __pa_12   0x000638    program     static G:\Documents\AuxCollab\J1939.C
+                  __pa_13   0x000642    program     static G:\Documents\AuxCollab\J1939.C
+                  __pa_14   0x000650    program     static G:\Documents\AuxCollab\J1939.C
+                  __pa_15   0x00065e    program     static G:\Documents\AuxCollab\J1939.C
+                  __pa_16   0x00066e    program     static G:\Documents\AuxCollab\J1939.C
+                  __pa_17   0x000676    program     static G:\Documents\AuxCollab\J1939.C
+                  __pa_18   0x00067c    program     static G:\Documents\AuxCollab\J1939.C
+                  __pa_19   0x000688    program     static G:\Documents\AuxCollab\J1939.C
+                   __pa_2   0x000574    program     static G:\Documents\AuxCollab\J1939.C
+                   __pa_2   0x0007e4    program     static G:\Documents\AuxCollab\ecocar.c
+                  __pa_20   0x000694    program     static G:\Documents\AuxCollab\J1939.C
+                   __pa_3   0x0007fc    program     static G:\Documents\AuxCollab\ecocar.c
+                   __pa_3   0x0005aa    program     static G:\Documents\AuxCollab\J1939.C
+                   __pa_4   0x0005b4    program     static G:\Documents\AuxCollab\J1939.C
+                   __pa_4   0x000814    program     static G:\Documents\AuxCollab\ecocar.c
+                   __pa_5   0x0005bc    program     static G:\Documents\AuxCollab\J1939.C
+                   __pa_5   0x00081e    program     static G:\Documents\AuxCollab\ecocar.c
+                   __pa_6   0x0005d0    program     static G:\Documents\AuxCollab\J1939.C
+                   __pa_6   0x000826    program     static G:\Documents\AuxCollab\ecocar.c
+                   __pa_7   0x00082e    program     static G:\Documents\AuxCollab\ecocar.c
+                   __pa_7   0x0005dc    program     static G:\Documents\AuxCollab\J1939.C
+                   __pa_8   0x0005f2    program     static G:\Documents\AuxCollab\J1939.C
+                   __pa_8   0x000844    program     static G:\Documents\AuxCollab\ecocar.c
+                   __pa_9   0x000600    program     static G:\Documents\AuxCollab\J1939.C
+            __zero_memory   0x000aa6    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                _do_cinit   0x0009ac    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
                    _entry   0x000000    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                 _startup   0x000ab4    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                compare_l   0x000aaa    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                copy_loop   0x000a0c    program     static                          
-            copy_one_byte   0x000a12    program     static                          
-                     done   0x000a36    program     static                          
-             done_copying   0x000a20    program     static                          
+                 _startup   0x000ac6    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                compare_l   0x000abc    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                copy_loop   0x000a1e    program     static                          
+            copy_one_byte   0x000a24    program     static                          
+                     done   0x000a48    program     static                          
+             done_copying   0x000a32    program     static                          
            high_interrupt   0x000008    program     extern G:\Documents\AuxCollab\main.c
                       isr   0x0008d8    program     extern G:\Documents\AuxCollab\main.c
-                     loop   0x000ac4    program     static                          
-                   loop_h   0x000aa2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                   loop_l   0x000aac    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                     main   0x0008be    program     extern G:\Documents\AuxCollab\main.c
-            putSerialData   0x000798    program     extern G:\Documents\AuxCollab\ecocar.c
-                 putUSART   0x000784    program     extern G:\Documents\AuxCollab\ecocar.c
-                     test   0x0009b4    program     static                          
-               zero_block   0x000aa2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                     loop   0x000ad6    program     static                          
+                   loop_h   0x000ab4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                   loop_l   0x000abe    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                     main   0x0008ae    program     extern G:\Documents\AuxCollab\main.c
+            putSerialData   0x00078c    program     extern G:\Documents\AuxCollab\ecocar.c
+                 putUSART   0x000778    program     extern G:\Documents\AuxCollab\ecocar.c
+                     test   0x0009c6    program     static                          
+               zero_block   0x000ab4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                    ADCON0   0x000fc2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                ADCON0bits   0x000fc2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                    ADCON1   0x000fc1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
@@ -475,7 +475,7 @@ J1939_RequestForAddressClaimHandling   0x000482    program     static G:\Documen
                  LATCbits   0x000f8b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                    LVDCON   0x000fd2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                LVDCONbits   0x000fd2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-         LastTXBufferUsed   0x0000c5       data     static G:\Documents\AuxCollab\J1939.C
+         LastTXBufferUsed   0x0000c3       data     static G:\Documents\AuxCollab\J1939.C
                     MSEL0   0x000df0       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                 MSEL0bits   0x000df0       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                     MSEL1   0x000df1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
@@ -484,8 +484,6 @@ J1939_RequestForAddressClaimHandling   0x000482    program     static G:\Documen
                 MSEL2bits   0x000df2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                     MSEL3   0x000df3       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                 MSEL3bits   0x000df3       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                      OFF   0x0000c3       data     extern G:\Documents\AuxCollab\main.c
-                       ON   0x0000c2       data     extern G:\Documents\AuxCollab\main.c
                    OSCCON   0x000fd3       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                OSCCONbits   0x000fd3       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                   OSCTUNE   0x000f9b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
@@ -905,7 +903,7 @@ J1939_RequestForAddressClaimHandling   0x000482    program     static G:\Documen
                     TXSTA   0x000fac       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                 TXSTAbits   0x000fac       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                    TXTail   0x0000a7       data     extern G:\Documents\AuxCollab\J1939.C
-             USART_Status   0x0000c4       data     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\USART\udefs.c
+             USART_Status   0x0000c2       data     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\USART\udefs.c
                    WDTCON   0x000fd1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                WDTCONbits   0x000fd1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                      WREG   0x000fe8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
@@ -927,85 +925,85 @@ J1939_RequestForAddressClaimHandling   0x000482    program     static G:\Documen
        ___return_lbl00000   0x000004    program     static                          
                    __init   0x000006    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\__init.c
            high_interrupt   0x000008    program     extern G:\Documents\AuxCollab\main.c
-       ___return_lbl00027   0x00000c    program     static                          
-              CompareName   0x000028    program     extern G:\Documents\AuxCollab\J1939.C
-                 CopyName   0x000064    program     extern G:\Documents\AuxCollab\J1939.C
-              SetECANMode   0x00008c    program     extern G:\Documents\AuxCollab\J1939.C
-         SetAddressFilter   0x0000a4    program     extern G:\Documents\AuxCollab\J1939.C
-           SendOneMessage   0x0000bc    program     extern G:\Documents\AuxCollab\J1939.C
-J1939_AddressClaimHandling   0x000194    program     static G:\Documents\AuxCollab\J1939.C
-     J1939_DequeueMessage   0x0001fa    program     extern G:\Documents\AuxCollab\J1939.C
-     J1939_EnqueueMessage   0x00022c    program     extern G:\Documents\AuxCollab\J1939.C
-     J1939_Initialization   0x000260    program     extern G:\Documents\AuxCollab\J1939.C
-               J1939_Poll   0x000312    program     extern G:\Documents\AuxCollab\J1939.C
-    J1939_ReceiveMessages   0x000364    program     static G:\Documents\AuxCollab\J1939.C
-J1939_RequestForAddressClaimHandling   0x000482    program     static G:\Documents\AuxCollab\J1939.C
-   J1939_TransmitMessages   0x00049a    program     static G:\Documents\AuxCollab\J1939.C
-                   __pa_0   0x00053c    program     static G:\Documents\AuxCollab\J1939.C
-                   __pa_1   0x00054a    program     static G:\Documents\AuxCollab\J1939.C
-                   __pa_2   0x000580    program     static G:\Documents\AuxCollab\J1939.C
-                   __pa_3   0x0005b6    program     static G:\Documents\AuxCollab\J1939.C
-                   __pa_4   0x0005c0    program     static G:\Documents\AuxCollab\J1939.C
-                   __pa_5   0x0005c8    program     static G:\Documents\AuxCollab\J1939.C
-                   __pa_6   0x0005dc    program     static G:\Documents\AuxCollab\J1939.C
-                   __pa_7   0x0005e8    program     static G:\Documents\AuxCollab\J1939.C
-                   __pa_8   0x0005fe    program     static G:\Documents\AuxCollab\J1939.C
-                   __pa_9   0x00060c    program     static G:\Documents\AuxCollab\J1939.C
-                  __pa_10   0x000620    program     static G:\Documents\AuxCollab\J1939.C
-                  __pa_11   0x000632    program     static G:\Documents\AuxCollab\J1939.C
-                  __pa_12   0x000644    program     static G:\Documents\AuxCollab\J1939.C
-                  __pa_13   0x00064e    program     static G:\Documents\AuxCollab\J1939.C
-                  __pa_14   0x00065c    program     static G:\Documents\AuxCollab\J1939.C
-                  __pa_15   0x00066a    program     static G:\Documents\AuxCollab\J1939.C
-                  __pa_16   0x00067a    program     static G:\Documents\AuxCollab\J1939.C
-                  __pa_17   0x000682    program     static G:\Documents\AuxCollab\J1939.C
-                  __pa_18   0x000688    program     static G:\Documents\AuxCollab\J1939.C
-                  __pa_19   0x000694    program     static G:\Documents\AuxCollab\J1939.C
-                  __pa_20   0x0006a0    program     static G:\Documents\AuxCollab\J1939.C
-           Broadcast_Data   0x0006a8    program     extern G:\Documents\AuxCollab\ecocar.c
-             Request_Data   0x000730    program     extern G:\Documents\AuxCollab\ecocar.c
-           Set_Oscillator   0x00075a    program     extern G:\Documents\AuxCollab\ecocar.c
-               InitEcoCar   0x00076e    program     extern G:\Documents\AuxCollab\ecocar.c
-                 putUSART   0x000784    program     extern G:\Documents\AuxCollab\ecocar.c
-            putSerialData   0x000798    program     extern G:\Documents\AuxCollab\ecocar.c
-                   __pa_0   0x0007d2    program     static G:\Documents\AuxCollab\ecocar.c
-                   __pa_1   0x0007e0    program     static G:\Documents\AuxCollab\ecocar.c
-                   __pa_2   0x0007f0    program     static G:\Documents\AuxCollab\ecocar.c
-                   __pa_3   0x000808    program     static G:\Documents\AuxCollab\ecocar.c
-                   __pa_4   0x000820    program     static G:\Documents\AuxCollab\ecocar.c
-                   __pa_5   0x00082a    program     static G:\Documents\AuxCollab\ecocar.c
-                   __pa_6   0x000832    program     static G:\Documents\AuxCollab\ecocar.c
-                   __pa_7   0x00083a    program     static G:\Documents\AuxCollab\ecocar.c
-                   __pa_8   0x000850    program     static G:\Documents\AuxCollab\ecocar.c
-               ReadInputs   0x000860    program     extern G:\Documents\AuxCollab\main.c
-                     Horn   0x00089e    program     extern G:\Documents\AuxCollab\main.c
-                     main   0x0008be    program     extern G:\Documents\AuxCollab\main.c
+       ___return_lbl00030   0x00000c    program     static                          
+              CompareName   0x00001c    program     extern G:\Documents\AuxCollab\J1939.C
+                 CopyName   0x000058    program     extern G:\Documents\AuxCollab\J1939.C
+              SetECANMode   0x000080    program     extern G:\Documents\AuxCollab\J1939.C
+         SetAddressFilter   0x000098    program     extern G:\Documents\AuxCollab\J1939.C
+           SendOneMessage   0x0000b0    program     extern G:\Documents\AuxCollab\J1939.C
+J1939_AddressClaimHandling   0x000188    program     static G:\Documents\AuxCollab\J1939.C
+     J1939_DequeueMessage   0x0001ee    program     extern G:\Documents\AuxCollab\J1939.C
+     J1939_EnqueueMessage   0x000220    program     extern G:\Documents\AuxCollab\J1939.C
+     J1939_Initialization   0x000254    program     extern G:\Documents\AuxCollab\J1939.C
+               J1939_Poll   0x000306    program     extern G:\Documents\AuxCollab\J1939.C
+    J1939_ReceiveMessages   0x000358    program     static G:\Documents\AuxCollab\J1939.C
+J1939_RequestForAddressClaimHandling   0x000476    program     static G:\Documents\AuxCollab\J1939.C
+   J1939_TransmitMessages   0x00048e    program     static G:\Documents\AuxCollab\J1939.C
+                   __pa_0   0x000530    program     static G:\Documents\AuxCollab\J1939.C
+                   __pa_1   0x00053e    program     static G:\Documents\AuxCollab\J1939.C
+                   __pa_2   0x000574    program     static G:\Documents\AuxCollab\J1939.C
+                   __pa_3   0x0005aa    program     static G:\Documents\AuxCollab\J1939.C
+                   __pa_4   0x0005b4    program     static G:\Documents\AuxCollab\J1939.C
+                   __pa_5   0x0005bc    program     static G:\Documents\AuxCollab\J1939.C
+                   __pa_6   0x0005d0    program     static G:\Documents\AuxCollab\J1939.C
+                   __pa_7   0x0005dc    program     static G:\Documents\AuxCollab\J1939.C
+                   __pa_8   0x0005f2    program     static G:\Documents\AuxCollab\J1939.C
+                   __pa_9   0x000600    program     static G:\Documents\AuxCollab\J1939.C
+                  __pa_10   0x000614    program     static G:\Documents\AuxCollab\J1939.C
+                  __pa_11   0x000626    program     static G:\Documents\AuxCollab\J1939.C
+                  __pa_12   0x000638    program     static G:\Documents\AuxCollab\J1939.C
+                  __pa_13   0x000642    program     static G:\Documents\AuxCollab\J1939.C
+                  __pa_14   0x000650    program     static G:\Documents\AuxCollab\J1939.C
+                  __pa_15   0x00065e    program     static G:\Documents\AuxCollab\J1939.C
+                  __pa_16   0x00066e    program     static G:\Documents\AuxCollab\J1939.C
+                  __pa_17   0x000676    program     static G:\Documents\AuxCollab\J1939.C
+                  __pa_18   0x00067c    program     static G:\Documents\AuxCollab\J1939.C
+                  __pa_19   0x000688    program     static G:\Documents\AuxCollab\J1939.C
+                  __pa_20   0x000694    program     static G:\Documents\AuxCollab\J1939.C
+           Broadcast_Data   0x00069c    program     extern G:\Documents\AuxCollab\ecocar.c
+             Request_Data   0x000724    program     extern G:\Documents\AuxCollab\ecocar.c
+           Set_Oscillator   0x00074e    program     extern G:\Documents\AuxCollab\ecocar.c
+               InitEcoCar   0x000762    program     extern G:\Documents\AuxCollab\ecocar.c
+                 putUSART   0x000778    program     extern G:\Documents\AuxCollab\ecocar.c
+            putSerialData   0x00078c    program     extern G:\Documents\AuxCollab\ecocar.c
+                   __pa_0   0x0007c6    program     static G:\Documents\AuxCollab\ecocar.c
+                   __pa_1   0x0007d4    program     static G:\Documents\AuxCollab\ecocar.c
+                   __pa_2   0x0007e4    program     static G:\Documents\AuxCollab\ecocar.c
+                   __pa_3   0x0007fc    program     static G:\Documents\AuxCollab\ecocar.c
+                   __pa_4   0x000814    program     static G:\Documents\AuxCollab\ecocar.c
+                   __pa_5   0x00081e    program     static G:\Documents\AuxCollab\ecocar.c
+                   __pa_6   0x000826    program     static G:\Documents\AuxCollab\ecocar.c
+                   __pa_7   0x00082e    program     static G:\Documents\AuxCollab\ecocar.c
+                   __pa_8   0x000844    program     static G:\Documents\AuxCollab\ecocar.c
+               ReadInputs   0x000854    program     extern G:\Documents\AuxCollab\main.c
+                     Horn   0x000892    program     extern G:\Documents\AuxCollab\main.c
+                     main   0x0008ae    program     extern G:\Documents\AuxCollab\main.c
                       isr   0x0008d8    program     extern G:\Documents\AuxCollab\main.c
-                _do_cinit   0x00099a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                     test   0x0009b4    program     static                          
-                copy_loop   0x000a0c    program     static                          
-            copy_one_byte   0x000a12    program     static                          
-             done_copying   0x000a20    program     static                          
-                     done   0x000a36    program     static                          
-       ___return_lbl00002   0x000a36    program     static                          
-             Delay10KTCYx   0x000a38    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-                    D10Kx   0x000a42    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-                   D10K_1   0x000a44    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-       _D10KTCYXCODE_0010   0x000a48    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-                    D10Kl   0x000a50    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-       _D10KTCYXCODE_001C   0x000a54    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-               WriteUSART   0x000a66    program     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\USART\uwrite.c
-            __zero_memory   0x000a94    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                   loop_h   0x000aa2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-               zero_block   0x000aa2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                compare_l   0x000aaa    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                   loop_l   0x000aac    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                 _startup   0x000ab4    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                     loop   0x000ac4    program     static                          
-       ___return_lbl00001   0x000ace    program     static                          
-             BUFFER_TABLE   0x000ad0    program     static G:\Documents\AuxCollab\J1939.h
-             BUFFER_TABLE   0x000ad5    program     static G:\Documents\AuxCollab\J1939.H
-             BUFFER_TABLE   0x000ada    program     static G:\Documents\AuxCollab\J1939.H
+                _do_cinit   0x0009ac    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                     test   0x0009c6    program     static                          
+                copy_loop   0x000a1e    program     static                          
+            copy_one_byte   0x000a24    program     static                          
+             done_copying   0x000a32    program     static                          
+                     done   0x000a48    program     static                          
+       ___return_lbl00002   0x000a48    program     static                          
+             Delay10KTCYx   0x000a4a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+                    D10Kx   0x000a54    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+                   D10K_1   0x000a56    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+       _D10KTCYXCODE_0010   0x000a5a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+                    D10Kl   0x000a62    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+       _D10KTCYXCODE_001C   0x000a66    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+               WriteUSART   0x000a78    program     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\USART\uwrite.c
+            __zero_memory   0x000aa6    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                   loop_h   0x000ab4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+               zero_block   0x000ab4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                compare_l   0x000abc    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                   loop_l   0x000abe    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                 _startup   0x000ac6    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                     loop   0x000ad6    program     static                          
+       ___return_lbl00001   0x000ae0    program     static                          
+             BUFFER_TABLE   0x000ae2    program     static G:\Documents\AuxCollab\J1939.h
+             BUFFER_TABLE   0x000ae7    program     static G:\Documents\AuxCollab\J1939.H
+             BUFFER_TABLE   0x000aec    program     static G:\Documents\AuxCollab\J1939.H
                __config_0   0x300001    program     static G:\Documents\AuxCollab\main.c
                __config_1   0x300002    program     static G:\Documents\AuxCollab\main.c
                __config_2   0x300003    program     static G:\Documents\AuxCollab\main.c
@@ -1036,10 +1034,8 @@ J1939_RequestForAddressClaimHandling   0x000482    program     static G:\Documen
                  data_ptr   0x0000bd       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
             InputRegister   0x0000c0       data     extern G:\Documents\AuxCollab\main.c
            OutputRegister   0x0000c1       data     extern G:\Documents\AuxCollab\main.c
-                       ON   0x0000c2       data     extern G:\Documents\AuxCollab\main.c
-                      OFF   0x0000c3       data     extern G:\Documents\AuxCollab\main.c
-             USART_Status   0x0000c4       data     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\USART\udefs.c
-         LastTXBufferUsed   0x0000c5       data     static G:\Documents\AuxCollab\J1939.C
+             USART_Status   0x0000c2       data     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\USART\udefs.c
+         LastTXBufferUsed   0x0000c3       data     static G:\Documents\AuxCollab\J1939.C
              RXF6SIDHbits   0x000d60       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  RXF6SIDH   0x000d60       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
              RXF6SIDLbits   0x000d61       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
@@ -1054,42 +1050,42 @@ J1939_RequestForAddressClaimHandling   0x000482    program     static G:\Documen
              RXF7SIDLbits   0x000d65       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
              RXF7EIDHbits   0x000d66       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  RXF7EIDH   0x000d66       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                 RXF7EIDL   0x000d67       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
              RXF7EIDLbits   0x000d67       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                 RXF8SIDH   0x000d68       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                 RXF7EIDL   0x000d67       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
              RXF8SIDHbits   0x000d68       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                 RXF8SIDH   0x000d68       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  RXF8SIDL   0x000d69       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
              RXF8SIDLbits   0x000d69       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
              RXF8EIDHbits   0x000d6a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  RXF8EIDH   0x000d6a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
              RXF8EIDLbits   0x000d6b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  RXF8EIDL   0x000d6b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-             RXF9SIDHbits   0x000d70       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  RXF9SIDH   0x000d70       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                 RXF9SIDL   0x000d71       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+             RXF9SIDHbits   0x000d70       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
              RXF9SIDLbits   0x000d71       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                 RXF9SIDL   0x000d71       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  RXF9EIDH   0x000d72       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
              RXF9EIDHbits   0x000d72       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
              RXF9EIDLbits   0x000d73       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  RXF9EIDL   0x000d73       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                 RXF10SIDH   0x000d74       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
             RXF10SIDHbits   0x000d74       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-            RXF10SIDLbits   0x000d75       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                 RXF10SIDL   0x000d75       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+            RXF10SIDLbits   0x000d75       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                 RXF10EIDH   0x000d76       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
             RXF10EIDHbits   0x000d76       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                 RXF10EIDL   0x000d77       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
             RXF10EIDLbits   0x000d77       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
             RXF11SIDHbits   0x000d78       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                 RXF11SIDH   0x000d78       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                RXF11SIDL   0x000d79       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
             RXF11SIDLbits   0x000d79       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                RXF11EIDH   0x000d7a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                RXF11SIDL   0x000d79       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
             RXF11EIDHbits   0x000d7a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                RXF11EIDH   0x000d7a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                 RXF11EIDL   0x000d7b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
             RXF11EIDLbits   0x000d7b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                RXF12SIDH   0x000d80       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
             RXF12SIDHbits   0x000d80       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                RXF12SIDH   0x000d80       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                 RXF12SIDL   0x000d81       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
             RXF12SIDLbits   0x000d81       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
             RXF12EIDHbits   0x000d82       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
@@ -1100,12 +1096,12 @@ J1939_RequestForAddressClaimHandling   0x000482    program     static G:\Documen
             RXF13SIDHbits   0x000d84       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                 RXF13SIDL   0x000d85       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
             RXF13SIDLbits   0x000d85       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-            RXF13EIDHbits   0x000d86       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                 RXF13EIDH   0x000d86       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+            RXF13EIDHbits   0x000d86       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                 RXF13EIDL   0x000d87       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
             RXF13EIDLbits   0x000d87       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-            RXF14SIDHbits   0x000d88       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                 RXF14SIDH   0x000d88       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+            RXF14SIDHbits   0x000d88       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
             RXF14SIDLbits   0x000d89       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                 RXF14SIDL   0x000d89       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
             RXF14EIDHbits   0x000d8a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
@@ -1116,14 +1112,14 @@ J1939_RequestForAddressClaimHandling   0x000482    program     static G:\Documen
             RXF15SIDHbits   0x000d90       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                 RXF15SIDL   0x000d91       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
             RXF15SIDLbits   0x000d91       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                RXF15EIDH   0x000d92       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
             RXF15EIDHbits   0x000d92       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                RXF15EIDH   0x000d92       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                 RXF15EIDL   0x000d93       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
             RXF15EIDLbits   0x000d93       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                  RXFCON0   0x000dd4       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
               RXFCON0bits   0x000dd4       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                  RXFCON1   0x000dd5       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                  RXFCON0   0x000dd4       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
               RXFCON1bits   0x000dd5       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                  RXFCON1   0x000dd5       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                     SDFLC   0x000dd8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                 SDFLCbits   0x000dd8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  RXFBCON0   0x000de0       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
@@ -1152,10 +1148,10 @@ J1939_RequestForAddressClaimHandling   0x000482    program     static G:\Documen
                 MSEL3bits   0x000df3       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                 BSEL0bits   0x000df8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                     BSEL0   0x000df8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                 BIE0bits   0x000dfa       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                      BIE0   0x000dfa       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                    TXBIE   0x000dfc       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                 BIE0bits   0x000dfa       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                 TXBIEbits   0x000dfc       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                    TXBIE   0x000dfc       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                     B0CON   0x000e20       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                 B0CONbits   0x000e20       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                B0SIDHbits   0x000e21       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
@@ -1174,8 +1170,8 @@ J1939_RequestForAddressClaimHandling   0x000482    program     static G:\Documen
                  B0D1bits   0x000e27       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                      B0D2   0x000e28       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  B0D2bits   0x000e28       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                 B0D3bits   0x000e29       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                      B0D3   0x000e29       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                 B0D3bits   0x000e29       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                      B0D4   0x000e2a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  B0D4bits   0x000e2a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                      B0D5   0x000e2b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
@@ -1186,94 +1182,94 @@ J1939_RequestForAddressClaimHandling   0x000482    program     static G:\Documen
                  B0D7bits   0x000e2d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
           CANSTAT_RO9bits   0x000e2e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
               CANSTAT_RO9   0x000e2e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-           CANCON_RO9bits   0x000e2f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                CANCON_RO9   0x000e2f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+           CANCON_RO9bits   0x000e2f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                     B1CON   0x000e30       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                 B1CONbits   0x000e30       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                   B1SIDH   0x000e31       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                B1SIDHbits   0x000e31       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                   B1SIDL   0x000e32       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                   B1SIDH   0x000e31       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                B1SIDLbits   0x000e32       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                   B1EIDH   0x000e33       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                   B1SIDL   0x000e32       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                B1EIDHbits   0x000e33       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                   B1EIDH   0x000e33       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                    B1EIDL   0x000e34       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                B1EIDLbits   0x000e34       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                     B1DLC   0x000e35       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                 B1DLCbits   0x000e35       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                 B1D0bits   0x000e36       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                      B1D0   0x000e36       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                 B1D1bits   0x000e37       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                 B1D0bits   0x000e36       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                      B1D1   0x000e37       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                 B1D2bits   0x000e38       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                 B1D1bits   0x000e37       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                      B1D2   0x000e38       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                 B1D3bits   0x000e39       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                 B1D2bits   0x000e38       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                      B1D3   0x000e39       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                 B1D3bits   0x000e39       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                      B1D4   0x000e3a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  B1D4bits   0x000e3a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                     B1D5   0x000e3b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  B1D5bits   0x000e3b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                     B1D6   0x000e3c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                     B1D5   0x000e3b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  B1D6bits   0x000e3c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                     B1D7   0x000e3d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                     B1D6   0x000e3c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  B1D7bits   0x000e3d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-          CANSTAT_RO8bits   0x000e3e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                     B1D7   0x000e3d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
               CANSTAT_RO8   0x000e3e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+          CANSTAT_RO8bits   0x000e3e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                CANCON_RO8   0x000e3f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
            CANCON_RO8bits   0x000e3f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                     B2CON   0x000e40       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                 B2CONbits   0x000e40       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                   B2SIDH   0x000e41       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                B2SIDHbits   0x000e41       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                   B2SIDL   0x000e42       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                   B2SIDH   0x000e41       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                B2SIDLbits   0x000e42       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                   B2EIDH   0x000e43       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                   B2SIDL   0x000e42       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                B2EIDHbits   0x000e43       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                   B2EIDL   0x000e44       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                   B2EIDH   0x000e43       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                B2EIDLbits   0x000e44       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                   B2EIDL   0x000e44       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                     B2DLC   0x000e45       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                 B2DLCbits   0x000e45       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                      B2D0   0x000e46       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  B2D0bits   0x000e46       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                     B2D1   0x000e47       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  B2D1bits   0x000e47       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                     B2D1   0x000e47       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  B2D2bits   0x000e48       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                      B2D2   0x000e48       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                 B2D3bits   0x000e49       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                      B2D3   0x000e49       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                 B2D3bits   0x000e49       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                      B2D4   0x000e4a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  B2D4bits   0x000e4a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                 B2D5bits   0x000e4b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                      B2D5   0x000e4b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                     B2D6   0x000e4c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                 B2D5bits   0x000e4b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  B2D6bits   0x000e4c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                     B2D7   0x000e4d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                     B2D6   0x000e4c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  B2D7bits   0x000e4d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                     B2D7   0x000e4d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
               CANSTAT_RO7   0x000e4e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
           CANSTAT_RO7bits   0x000e4e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-               CANCON_RO7   0x000e4f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
            CANCON_RO7bits   0x000e4f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+               CANCON_RO7   0x000e4f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                 B3CONbits   0x000e50       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                     B3CON   0x000e50       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                B3SIDHbits   0x000e51       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                    B3SIDH   0x000e51       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-               B3SIDLbits   0x000e52       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                    B3SIDL   0x000e52       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-               B3EIDHbits   0x000e53       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+               B3SIDLbits   0x000e52       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                    B3EIDH   0x000e53       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+               B3EIDHbits   0x000e53       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                B3EIDLbits   0x000e54       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                    B3EIDL   0x000e54       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                 B3DLCbits   0x000e55       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                     B3DLC   0x000e55       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  B3D0bits   0x000e56       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                      B3D0   0x000e56       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                 B3D1bits   0x000e57       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                      B3D1   0x000e57       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                 B3D2bits   0x000e58       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                 B3D1bits   0x000e57       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                      B3D2   0x000e58       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                 B3D2bits   0x000e58       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                      B3D3   0x000e59       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  B3D3bits   0x000e59       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                     B3D4   0x000e5a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  B3D4bits   0x000e5a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                     B3D4   0x000e5a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                      B3D5   0x000e5b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  B3D5bits   0x000e5b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                      B3D6   0x000e5c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
@@ -1282,46 +1278,46 @@ J1939_RequestForAddressClaimHandling   0x000482    program     static G:\Documen
                  B3D7bits   0x000e5d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
               CANSTAT_RO6   0x000e5e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
           CANSTAT_RO6bits   0x000e5e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-               CANCON_RO6   0x000e5f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
            CANCON_RO6bits   0x000e5f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+               CANCON_RO6   0x000e5f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                     B4CON   0x000e60       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                 B4CONbits   0x000e60       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                B4SIDHbits   0x000e61       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                    B4SIDH   0x000e61       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                   B4SIDL   0x000e62       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                B4SIDLbits   0x000e62       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                   B4EIDH   0x000e63       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                   B4SIDL   0x000e62       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                B4EIDHbits   0x000e63       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                   B4EIDH   0x000e63       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                    B4EIDL   0x000e64       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                B4EIDLbits   0x000e64       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                    B4DLC   0x000e65       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                 B4DLCbits   0x000e65       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                     B4D0   0x000e66       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                    B4DLC   0x000e65       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  B4D0bits   0x000e66       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                     B4D0   0x000e66       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                      B4D1   0x000e67       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  B4D1bits   0x000e67       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                     B4D2   0x000e68       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  B4D2bits   0x000e68       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                     B4D2   0x000e68       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                      B4D3   0x000e69       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  B4D3bits   0x000e69       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                 B4D4bits   0x000e6a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                      B4D4   0x000e6a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                 B4D4bits   0x000e6a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                      B4D5   0x000e6b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  B4D5bits   0x000e6b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                 B4D6bits   0x000e6c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                      B4D6   0x000e6c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                 B4D7bits   0x000e6d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                 B4D6bits   0x000e6c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                      B4D7   0x000e6d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-          CANSTAT_RO5bits   0x000e6e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                 B4D7bits   0x000e6d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
               CANSTAT_RO5   0x000e6e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+          CANSTAT_RO5bits   0x000e6e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
            CANCON_RO5bits   0x000e6f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                CANCON_RO5   0x000e6f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                    B5CON   0x000e70       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                 B5CONbits   0x000e70       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                    B5CON   0x000e70       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                    B5SIDH   0x000e71       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                B5SIDHbits   0x000e71       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-               B5SIDLbits   0x000e72       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                    B5SIDL   0x000e72       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+               B5SIDLbits   0x000e72       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                    B5EIDH   0x000e73       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                B5EIDHbits   0x000e73       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                    B5EIDL   0x000e74       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
@@ -1330,16 +1326,16 @@ J1939_RequestForAddressClaimHandling   0x000482    program     static G:\Documen
                 B5DLCbits   0x000e75       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                      B5D0   0x000e76       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  B5D0bits   0x000e76       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                 B5D1bits   0x000e77       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                      B5D1   0x000e77       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                 B5D1bits   0x000e77       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                      B5D2   0x000e78       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  B5D2bits   0x000e78       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                      B5D3   0x000e79       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  B5D3bits   0x000e79       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                      B5D4   0x000e7a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  B5D4bits   0x000e7a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                 B5D5bits   0x000e7b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                      B5D5   0x000e7b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                 B5D5bits   0x000e7b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  B5D6bits   0x000e7c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                      B5D6   0x000e7c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  B5D7bits   0x000e7d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
@@ -1350,8 +1346,8 @@ J1939_RequestForAddressClaimHandling   0x000482    program     static G:\Documen
            CANCON_RO4bits   0x000e7f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  RXF0SIDH   0x000f00       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
              RXF0SIDHbits   0x000f00       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-             RXF0SIDLbits   0x000f01       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  RXF0SIDL   0x000f01       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+             RXF0SIDLbits   0x000f01       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  RXF0EIDH   0x000f02       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
              RXF0EIDHbits   0x000f02       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  RXF0EIDL   0x000f03       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
@@ -1370,168 +1366,168 @@ J1939_RequestForAddressClaimHandling   0x000482    program     static G:\Documen
                  RXF2SIDL   0x000f09       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  RXF2EIDH   0x000f0a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
              RXF2EIDHbits   0x000f0a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-             RXF2EIDLbits   0x000f0b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  RXF2EIDL   0x000f0b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+             RXF2EIDLbits   0x000f0b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  RXF3SIDH   0x000f0c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
              RXF3SIDHbits   0x000f0c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  RXF3SIDL   0x000f0d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
              RXF3SIDLbits   0x000f0d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  RXF3EIDH   0x000f0e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
              RXF3EIDHbits   0x000f0e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-             RXF3EIDLbits   0x000f0f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  RXF3EIDL   0x000f0f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-             RXF4SIDHbits   0x000f10       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+             RXF3EIDLbits   0x000f0f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  RXF4SIDH   0x000f10       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+             RXF4SIDHbits   0x000f10       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
              RXF4SIDLbits   0x000f11       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  RXF4SIDL   0x000f11       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-             RXF4EIDHbits   0x000f12       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  RXF4EIDH   0x000f12       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+             RXF4EIDHbits   0x000f12       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
              RXF4EIDLbits   0x000f13       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  RXF4EIDL   0x000f13       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                 RXF5SIDH   0x000f14       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
              RXF5SIDHbits   0x000f14       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                 RXF5SIDH   0x000f14       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
              RXF5SIDLbits   0x000f15       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  RXF5SIDL   0x000f15       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-             RXF5EIDHbits   0x000f16       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  RXF5EIDH   0x000f16       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                 RXF5EIDL   0x000f17       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+             RXF5EIDHbits   0x000f16       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
              RXF5EIDLbits   0x000f17       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                 RXF5EIDL   0x000f17       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  RXM0SIDH   0x000f18       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
              RXM0SIDHbits   0x000f18       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                 RXM0SIDL   0x000f19       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
              RXM0SIDLbits   0x000f19       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                 RXM0SIDL   0x000f19       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  RXM0EIDH   0x000f1a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
              RXM0EIDHbits   0x000f1a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-             RXM0EIDLbits   0x000f1b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  RXM0EIDL   0x000f1b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+             RXM0EIDLbits   0x000f1b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
              RXM1SIDHbits   0x000f1c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  RXM1SIDH   0x000f1c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-             RXM1SIDLbits   0x000f1d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  RXM1SIDL   0x000f1d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-             RXM1EIDHbits   0x000f1e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+             RXM1SIDLbits   0x000f1d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  RXM1EIDH   0x000f1e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-             RXM1EIDLbits   0x000f1f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+             RXM1EIDHbits   0x000f1e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  RXM1EIDL   0x000f1f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                  TXB2CON   0x000f20       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+             RXM1EIDLbits   0x000f1f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
               TXB2CONbits   0x000f20       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                  TXB2CON   0x000f20       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
              TXB2SIDHbits   0x000f21       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  TXB2SIDH   0x000f21       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
              TXB2SIDLbits   0x000f22       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  TXB2SIDL   0x000f22       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                 TXB2EIDH   0x000f23       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
              TXB2EIDHbits   0x000f23       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                 TXB2EIDH   0x000f23       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
              TXB2EIDLbits   0x000f24       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  TXB2EIDL   0x000f24       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-              TXB2DLCbits   0x000f25       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                   TXB2DLC   0x000f25       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-               TXB2D0bits   0x000f26       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+              TXB2DLCbits   0x000f25       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                    TXB2D0   0x000f26       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+               TXB2D0bits   0x000f26       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                    TXB2D1   0x000f27       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                TXB2D1bits   0x000f27       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                TXB2D2bits   0x000f28       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                    TXB2D2   0x000f28       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-               TXB2D3bits   0x000f29       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                    TXB2D3   0x000f29       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-               TXB2D4bits   0x000f2a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+               TXB2D3bits   0x000f29       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                    TXB2D4   0x000f2a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+               TXB2D4bits   0x000f2a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                TXB2D5bits   0x000f2b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                    TXB2D5   0x000f2b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                TXB2D6bits   0x000f2c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                    TXB2D6   0x000f2c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-               TXB2D7bits   0x000f2d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                    TXB2D7   0x000f2d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+               TXB2D7bits   0x000f2d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
           CANSTAT_RO3bits   0x000f2e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
               CANSTAT_RO3   0x000f2e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
            CANCON_RO3bits   0x000f2f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                CANCON_RO3   0x000f2f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                  TXB1CON   0x000f30       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
               TXB1CONbits   0x000f30       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                  TXB1CON   0x000f30       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
              TXB1SIDHbits   0x000f31       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  TXB1SIDH   0x000f31       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-             TXB1SIDLbits   0x000f32       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  TXB1SIDL   0x000f32       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+             TXB1SIDLbits   0x000f32       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
              TXB1EIDHbits   0x000f33       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  TXB1EIDH   0x000f33       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
              TXB1EIDLbits   0x000f34       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  TXB1EIDL   0x000f34       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-              TXB1DLCbits   0x000f35       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                   TXB1DLC   0x000f35       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                   TXB1D0   0x000f36       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+              TXB1DLCbits   0x000f35       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                TXB1D0bits   0x000f36       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                   TXB1D0   0x000f36       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                    TXB1D1   0x000f37       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                TXB1D1bits   0x000f37       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                    TXB1D2   0x000f38       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                TXB1D2bits   0x000f38       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                    TXB1D3   0x000f39       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                TXB1D3bits   0x000f39       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-               TXB1D4bits   0x000f3a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                    TXB1D4   0x000f3a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+               TXB1D4bits   0x000f3a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                    TXB1D5   0x000f3b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                TXB1D5bits   0x000f3b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                    TXB1D6   0x000f3c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                TXB1D6bits   0x000f3c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                    TXB1D7   0x000f3d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                TXB1D7bits   0x000f3d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-          CANSTAT_RO2bits   0x000f3e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
               CANSTAT_RO2   0x000f3e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+          CANSTAT_RO2bits   0x000f3e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
            CANCON_RO2bits   0x000f3f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                CANCON_RO2   0x000f3f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
               TXB0CONbits   0x000f40       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                   TXB0CON   0x000f40       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
              TXB0SIDHbits   0x000f41       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  TXB0SIDH   0x000f41       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                 TXB0SIDL   0x000f42       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
              TXB0SIDLbits   0x000f42       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                 TXB0SIDL   0x000f42       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
              TXB0EIDHbits   0x000f43       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  TXB0EIDH   0x000f43       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  TXB0EIDL   0x000f44       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
              TXB0EIDLbits   0x000f44       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                  TXB0DLC   0x000f45       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
               TXB0DLCbits   0x000f45       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-               TXB0D0bits   0x000f46       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                  TXB0DLC   0x000f45       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                    TXB0D0   0x000f46       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-               TXB0D1bits   0x000f47       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+               TXB0D0bits   0x000f46       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                    TXB0D1   0x000f47       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-               TXB0D2bits   0x000f48       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+               TXB0D1bits   0x000f47       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                    TXB0D2   0x000f48       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-               TXB0D3bits   0x000f49       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+               TXB0D2bits   0x000f48       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                    TXB0D3   0x000f49       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-               TXB0D4bits   0x000f4a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+               TXB0D3bits   0x000f49       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                    TXB0D4   0x000f4a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-               TXB0D5bits   0x000f4b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+               TXB0D4bits   0x000f4a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                    TXB0D5   0x000f4b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-               TXB0D6bits   0x000f4c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+               TXB0D5bits   0x000f4b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                    TXB0D6   0x000f4c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-               TXB0D7bits   0x000f4d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+               TXB0D6bits   0x000f4c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                    TXB0D7   0x000f4d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-              CANSTAT_RO1   0x000f4e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+               TXB0D7bits   0x000f4d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
           CANSTAT_RO1bits   0x000f4e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+              CANSTAT_RO1   0x000f4e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
            CANCON_RO1bits   0x000f4f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                CANCON_RO1   0x000f4f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                  RXB1CON   0x000f50       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
               RXB1CONbits   0x000f50       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                  RXB1CON   0x000f50       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
              RXB1SIDHbits   0x000f51       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  RXB1SIDH   0x000f51       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                 RXB1SIDL   0x000f52       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
              RXB1SIDLbits   0x000f52       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                 RXB1EIDH   0x000f53       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                 RXB1SIDL   0x000f52       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
              RXB1EIDHbits   0x000f53       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                 RXB1EIDH   0x000f53       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  RXB1EIDL   0x000f54       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
              RXB1EIDLbits   0x000f54       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                  RXB1DLC   0x000f55       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
               RXB1DLCbits   0x000f55       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                  RXB1DLC   0x000f55       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                RXB1D0bits   0x000f56       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                    RXB1D0   0x000f56       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-               RXB1D1bits   0x000f57       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                    RXB1D1   0x000f57       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-               RXB1D2bits   0x000f58       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+               RXB1D1bits   0x000f57       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                    RXB1D2   0x000f58       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-               RXB1D3bits   0x000f59       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+               RXB1D2bits   0x000f58       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                    RXB1D3   0x000f59       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-               RXB1D4bits   0x000f5a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+               RXB1D3bits   0x000f59       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                    RXB1D4   0x000f5a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-                   RXB1D5   0x000f5b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+               RXB1D4bits   0x000f5a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                RXB1D5bits   0x000f5b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+                   RXB1D5   0x000f5b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                    RXB1D6   0x000f5c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                RXB1D6bits   0x000f5c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                    RXB1D7   0x000f5d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
@@ -1544,14 +1540,14 @@ J1939_RequestForAddressClaimHandling   0x000482    program     static G:\Documen
               RXB0CONbits   0x000f60       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
              RXB0SIDHbits   0x000f61       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  RXB0SIDH   0x000f61       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-             RXB0SIDLbits   0x000f62       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  RXB0SIDL   0x000f62       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-             RXB0EIDHbits   0x000f63       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+             RXB0SIDLbits   0x000f62       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  RXB0EIDH   0x000f63       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+             RXB0EIDHbits   0x000f63       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                  RXB0EIDL   0x000f64       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
              RXB0EIDLbits   0x000f64       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
-              RXB0DLCbits   0x000f65       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                   RXB0DLC   0x000f65       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
+              RXB0DLCbits   0x000f65       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                RXB0D0bits   0x000f66       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                    RXB0D0   0x000f66       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
                RXB0D1bits   0x000f67       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f2685.asm
