@@ -9,6 +9,9 @@
 #include "J1939.h"
 #include "ecocar.h"
 #include <delays.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <usart.h>
 #pragma config OSC = IRCIO67    // Oscillator Selection Bit
 #pragma config BOREN = OFF      // Brown-out Reset disabled in hardware and software
 #pragma config WDT = OFF        // Watchdog Timer disabled (control is placed on the SWDTEN bit)
@@ -86,7 +89,7 @@ char ReadInputs()
      return(InputRegister);
  }
 
- char OutputRegister;
+char OutputRegister;
  //list of bits
 #define HORN_FET 0
 #define BRK_L_HIGH 1
@@ -125,7 +128,14 @@ void Brake(char Brake_Input) //turns brake lights on and off
     }
 }
 
-
+int ttarget;
+int LeftEdge;
+int RightEdge;
+int CurrentTime;
+     int PrevServoTime;
+     int ServoPeriod;
+     //loop forever
+     int aangle;
 void main ()
  {
      InitEcoCar(); //disables a bunch of stuff
@@ -171,29 +181,24 @@ void main ()
      INTCONbits.GIEL = 1;
 
      //wiper variables
-     int Angle=0;
-     int Target=0;
-     int LeftEdge=0;
-     int RightEdge=90;
-     int CurrentTime;
-     int PrevServoTime;
-     int ServoPeriod;
-     //loop forever
+     //long int Angle = 0;
+     
      while(1)
      {
-         if(((PORTCbits.RC4 == 1) || (Angle!=LeftEdge)) && ((CurrentTime-PrevServoTime)>ServoPeriod))
+         if(((PORTCbits.RC4 == 1) || ((aangle!=LeftEdge)) && ((CurrentTime-PrevServoTime)>ServoPeriod)))
          {
-             if (Angle==Target)
+             if (aangle==ttarget)
              {
-                 if(Target==RightEdge)
-                     Target=LeftEdge;
+                 if(ttarget==RightEdge)
+                 {
+                     ttarget=LeftEdge;
+                 }
                  else
-                     Target=RightEdge;
+                 {
+                         ttarget=RightEdge;
+                 }
              }
-             else if (Angle<Target)
-             {
-
-             }
+ 
              //LATCbits.LATC2 = 1;
          }
      }
@@ -245,15 +250,6 @@ void isr(void)
     INTCONbits.GIE = 1; //enable interrupts
 }
 
-//////////////////THIS IS OUR LOW LEVEL INTERRUPT SERVICE ROUTINE/////////////////////////
-/* SOME THINGS TO KEEP IN MIND :
-    Comments on the same line as the pragma statements here can cause problems*/
-#pragma interrupt low_isr
-void low_isr(void)
-{
-    //check
-}
-
 //////////////////THIS IS OUR INTERRUPT/////////////////////////
 // This calls the interrupt service routine when the interrupt is called
 
@@ -274,21 +270,3 @@ void high_interrupt(void){
 
 
 
-
-//////////////////THIS IS OUR LOW LEVEL INTERRUPT/////////////////////////
-// This calls the interrupt service routine when the interrupt is called
-
-#pragma code high_vector = 0x18
-
-/* this 'function' can only be 8 bytes in length. This is why the code we want
- * to run with our interrupt will be put in the interrupt service routine   */
-void low_interrupt(void){
-
-    /* This is an assembly instruction. This efficiently calls our interrupt
-     * service routine */
-    _asm GOTO low_isr _endasm
-}
-
-/* There is actually a space at the end of this line and a line break after...
- * This is important for some strange reason */
-#pragma code
