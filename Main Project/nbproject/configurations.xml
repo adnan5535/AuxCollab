@@ -24,6 +24,10 @@
     <itemPath>ecocar.c</itemPath>
     <itemPath>ecocar.h</itemPath>
     <itemPath>j1939def.h</itemPath>
+    <itemPath>ReadInputsFunction.c</itemPath>
+    <itemPath>ReadInputsFunction.h</itemPath>
+    <itemPath>SetIO_Function.c</itemPath>
+    <itemPath>SetIO_Function.h</itemPath>
   </logicalFolder>
   <sourceRootList>
     <Elem>Common</Elem>
@@ -46,8 +50,11 @@
           <linkerLibItems>
           </linkerLibItems>
         </linkerTool>
+        <archiverTool>
+        </archiverTool>
         <loading>
           <useAlternateLoadableFile>false</useAlternateLoadableFile>
+          <parseOnProdLoad>false</parseOnProdLoad>
           <alternateLoadableFile></alternateLoadableFile>
         </loading>
       </compileType>

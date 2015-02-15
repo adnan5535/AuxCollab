@@ -5,89 +5,25 @@
  * Created on January 26, 2015, 6:28 PM
  */
 
-#include <p18cxxx.h>
-#include "J1939.h"
+#include <p18cxxx.h> 
+#include "J1939.h" 
 #include "ecocar.h"
-#include <delays.h>
+#include <delays.h>  
 #include <stdio.h>
 #include <stdlib.h>
-#include <usart.h>
+#include "ReadInputsFunction.h"
+#include "SetIO_Function.h"
+
 #pragma config OSC = IRCIO67    // Oscillator Selection Bit
 #pragma config BOREN = OFF      // Brown-out Reset disabled in hardware and software
 #pragma config WDT = OFF        // Watchdog Timer disabled (control is placed on the SWDTEN bit)
-
-
 
 /*
  * 
  */
 
-
 #define ON 1
 #define OFF 0
-
-char InputRegister;
-//list of bits
-#define WIPER_SWITCH 0
-#define HAZ_SWITCH 1
-#define HORN_SWITCH 2
-#define BLINK_L_SWITCH 3
-#define BLINK_R_SWITCH 4
-//bits 5 , 6 and 7 unused
-
-char ReadInputs()
- {
-     INTCONbits.GIE = 0; //disable interrupts
-     //clear InputRegister
-     InputRegister = 0;
-     //check WIPER_SWITCH
-     if(PORTCbits.RC4 == 1)
-     {
-         InputRegister |= (1 << WIPER_SWITCH);
-     }
-     else
-     {
-         InputRegister &= ~(1 << WIPER_SWITCH);
-     }
-     //check HAZ_SWITCH
-     if(PORTCbits.RC5 == 1)
-     {
-         InputRegister |= (1 << HAZ_SWITCH);
-     }
-     else 
-     {
-         InputRegister &= ~(1 << HAZ_SWITCH);
-     }
-     //check HORN_SWITCH
-     if(PORTBbits.RB0 == 1)
-     {
-         InputRegister |= (1 << HORN_SWITCH);
-     }
-     else 
-     {
-         InputRegister &= ~(1 << HORN_SWITCH);
-     }
-     //check BLINK_L_SWITCH
-     if(PORTCbits.RC7 == 1)
-     {
-         InputRegister |= (1 << BLINK_L_SWITCH);
-     }
-     else 
-     {
-         InputRegister &= ~(1 << BLINK_L_SWITCH);
-     }
-     //check BLINK_R_SWITCH
-     if(PORTCbits.RC6 == 1)
-     {
-         InputRegister |= (1 << BLINK_R_SWITCH);
-     }
-     else
-     {
-         InputRegister &= ~(1 << BLINK_R_SWITCH);
-     }
-     INTCONbits.GIE = 1; //enable interrupts
-     return(InputRegister);
- }
 
 char OutputRegister;
  //list of bits
@@ -128,34 +64,23 @@ void Brake(char Brake_Input) //turns brake lights on and off
     }
 }
 
+//wiper variables
 int ttarget;
 int LeftEdge;
 int RightEdge;
 int CurrentTime;
-     int PrevServoTime;
-     int ServoPeriod;
-     //loop forever
-     int aangle;
+int PrevServoTime;
+int ServoPeriod;
+int aangle;
+
 void main ()
  {
      InitEcoCar(); //disables a bunch of stuff
 
-     //set up input/ouputs
-     TRISBbits.TRISB0 = 1;//HORN_SWITCH input
-     TRISAbits.TRISA0 = 0; //HORN_FET output
+     //need to change clock to 4MHz for PWM?
 
-     TRISBbits.TRISB1 = 1; //BRAKE_SWITCH input
-     TRISCbits.TRISC0 = 0; //BRK_L_HIGH output
-     TRISCbits.TRISC1 = 0; //BRK_R_HIGH output
-
-     //other inputs
-     TRISCbits.TRISC4 = 1; //Wipers Switch input
-     TRISCbits.TRISC5 = 1;
-     TRISCbits.TRISC6 = 1;
-     TRISCbits.TRISC7 = 1;
-
-     //other outputs
-     TRISCbits.TRISC2=0; //SERVO (For the Wipers)
+     SetIO(); //set up inputs and outputs
+     ReadInputs();
 
      //enable interrupt priorities
      RCONbits.IPEN = 1;
@@ -180,8 +105,6 @@ void main ()
      //enable low level interrupts
      INTCONbits.GIEL = 1;
 
-     //wiper variables
-     //long int Angle = 0;
      
      while(1)
      {
@@ -267,6 +190,3 @@ void high_interrupt(void){
 /* There is actually a space at the end of this line and a line break after...
  * This is important for some strange reason */
 #pragma code
-
-
-
