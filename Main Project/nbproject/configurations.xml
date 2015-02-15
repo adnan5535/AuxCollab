@@ -28,6 +28,8 @@
     <itemPath>ReadInputsFunction.h</itemPath>
     <itemPath>SetIO_Function.c</itemPath>
     <itemPath>SetIO_Function.h</itemPath>
+    <itemPath>Servo_Functions.h</itemPath>
+    <itemPath>Servo_Functions.c</itemPath>
   </logicalFolder>
   <sourceRootList>
     <Elem>Common</Elem>

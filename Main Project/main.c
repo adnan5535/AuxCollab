@@ -11,10 +11,12 @@
 #include <delays.h>  
 #include <stdio.h>
 #include <stdlib.h>
+//add these to project as existing files if it won't compile
 #include "ReadInputsFunction.h"
 #include "SetIO_Function.h"
+#include "Servo_Functions.h"
 
-#pragma config OSC = IRCIO67    // Oscillator Selection Bit
+#pragma config OSC = IRCIO67    // Oscillator Selection Bit: IRCIO67 isn't anywhere in datasheet...???...???
 #pragma config BOREN = OFF      // Brown-out Reset disabled in hardware and software
 #pragma config WDT = OFF        // Watchdog Timer disabled (control is placed on the SWDTEN bit)
 
@@ -81,6 +83,7 @@ void main ()
 
      SetIO(); //set up inputs and outputs
      ReadInputs();
+     PWMSetup(REST_POSITION);
 
      //enable interrupt priorities
      RCONbits.IPEN = 1;
@@ -98,6 +101,7 @@ void main ()
      INTCON3bits.INT1IP = 1; //high priority
 
      //setup timer1 interrupts for millis function
+     //or some sort of timer function centiseconds, deciseconds, etc...
 
      //enable high level interrupts
      INTCONbits.GIE = 1;

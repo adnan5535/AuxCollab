@@ -45,17 +45,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=main.c J1939.C ecocar.c ReadInputsFunction.c SetIO_Function.c
+SOURCEFILES_QUOTED_IF_SPACED=main.c J1939.C ecocar.c ReadInputsFunction.c SetIO_Function.c Servo_Functions.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/J1939.o ${OBJECTDIR}/ecocar.o ${OBJECTDIR}/ReadInputsFunction.o ${OBJECTDIR}/SetIO_Function.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/J1939.o.d ${OBJECTDIR}/ecocar.o.d ${OBJECTDIR}/ReadInputsFunction.o.d ${OBJECTDIR}/SetIO_Function.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/J1939.o ${OBJECTDIR}/ecocar.o ${OBJECTDIR}/ReadInputsFunction.o ${OBJECTDIR}/SetIO_Function.o ${OBJECTDIR}/Servo_Functions.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/J1939.o.d ${OBJECTDIR}/ecocar.o.d ${OBJECTDIR}/ReadInputsFunction.o.d ${OBJECTDIR}/SetIO_Function.o.d ${OBJECTDIR}/Servo_Functions.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/J1939.o ${OBJECTDIR}/ecocar.o ${OBJECTDIR}/ReadInputsFunction.o ${OBJECTDIR}/SetIO_Function.o
+OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/J1939.o ${OBJECTDIR}/ecocar.o ${OBJECTDIR}/ReadInputsFunction.o ${OBJECTDIR}/SetIO_Function.o ${OBJECTDIR}/Servo_Functions.o
 
 # Source Files
-SOURCEFILES=main.c J1939.C ecocar.c ReadInputsFunction.c SetIO_Function.c
+SOURCEFILES=main.c J1939.C ecocar.c ReadInputsFunction.c SetIO_Function.c Servo_Functions.c
 
 
 CFLAGS=
@@ -129,6 +129,14 @@ ${OBJECTDIR}/SetIO_Function.o: SetIO_Function.c  nbproject/Makefile-${CND_CONF}.
 	@${DEP_GEN} -d ${OBJECTDIR}/SetIO_Function.o 
 	@${FIXDEPS} "${OBJECTDIR}/SetIO_Function.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
 	
+${OBJECTDIR}/Servo_Functions.o: Servo_Functions.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/Servo_Functions.o.d 
+	@${RM} ${OBJECTDIR}/Servo_Functions.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -p$(MP_PROCESSOR_OPTION) -ms -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/Servo_Functions.o   Servo_Functions.c 
+	@${DEP_GEN} -d ${OBJECTDIR}/Servo_Functions.o 
+	@${FIXDEPS} "${OBJECTDIR}/Servo_Functions.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
+	
 else
 ${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -169,6 +177,14 @@ ${OBJECTDIR}/SetIO_Function.o: SetIO_Function.c  nbproject/Makefile-${CND_CONF}.
 	${MP_CC} $(MP_EXTRA_CC_PRE) -p$(MP_PROCESSOR_OPTION) -ms -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/SetIO_Function.o   SetIO_Function.c 
 	@${DEP_GEN} -d ${OBJECTDIR}/SetIO_Function.o 
 	@${FIXDEPS} "${OBJECTDIR}/SetIO_Function.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
+	
+${OBJECTDIR}/Servo_Functions.o: Servo_Functions.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/Servo_Functions.o.d 
+	@${RM} ${OBJECTDIR}/Servo_Functions.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -p$(MP_PROCESSOR_OPTION) -ms -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/Servo_Functions.o   Servo_Functions.c 
+	@${DEP_GEN} -d ${OBJECTDIR}/Servo_Functions.o 
+	@${FIXDEPS} "${OBJECTDIR}/Servo_Functions.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
 	
 endif
 
