@@ -42,10 +42,13 @@ void PWMSetup(char PWMInput)
     //set PWM duty cycle by writing to the CCPR1L register and CCP1CON<5:4> bits
     CCPR1L = PWMInput;
     //Make CCP1 an output by clearing appropriate TRIS bit
-
+    TRISCbits.TRISC2 = 0;
     //Set TMR2 prescale value then enable Timer 2 by writing to T2CON
-
+    T2CONbits.T2CKPS1 = 1;
+    T2CONbits.TMR2ON = 1;
     //Configure CCP1 module for PWM operation
+    CCP1CONbits.CCP1M3 = 1;
+    CCP1CONbits.CCP1M2 = 1;  //PWM mode
 
 }
 

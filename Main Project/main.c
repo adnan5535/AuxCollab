@@ -78,9 +78,9 @@ int aangle;
 void main ()
  {
      InitEcoCar(); //disables a bunch of stuff
-
-     //need to change clock to 4MHz for PWM?
-
+     //also sets clock rate
+     //I changed from 32 to 8 MHz
+     
      SetIO(); //set up inputs and outputs
      ReadInputs();
      PWMSetup(REST_POSITION);

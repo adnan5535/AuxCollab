@@ -57,7 +57,7 @@ void Set_Oscillator()
     OSCCONbits.IRCF0 = 1;
 
     // Multiply frequency using PLL to 4* = 32 MHz
-    OSCTUNEbits.PLLEN = 1;
+    //OSCTUNEbits.PLLEN = 1;
 
     // Wait a bit for PLL to stabilize.
     Delay10KTCYx(10);
@@ -76,7 +76,7 @@ void InitEcoCar()
 
     //LATCbits.LATC6 = 1;              // TX should be held high when not transmitting (for wireless)
 
-    Set_Oscillator();               // Set speed of oscillator to 32 MHz?
+    Set_Oscillator();               // Set speed of oscillator to [32MHz] 8MHz changed
 }
 
 void putUSART(int i)
