@@ -110,22 +110,8 @@ void main ()
      //enable low level interrupts
      INTCONbits.GIEL = 1;
 
-     //test PWM
-     while(1)
-     {
-         PWMUpdate(REST_POSITION);
-         Delay10KTCYx(10);
-         Delay10KTCYx(10);
-         Delay10KTCYx(10);
-         Delay10KTCYx(10);
-         Delay10KTCYx(10);
-         PWMUpdate(EXTREME_POSITION);
-         Delay10KTCYx(10);
-         Delay10KTCYx(10);
-         Delay10KTCYx(10);
-         Delay10KTCYx(10);
-         Delay10KTCYx(10);
-     }
+
+     sweep(); //test wiper
 
      while(0)
      {

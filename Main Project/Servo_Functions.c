@@ -1,6 +1,6 @@
 #include "Servo_Functions.h"
 #include <p18cxxx.h>
-
+#include <delays.h>  
 
 void PWMSetup(char PWMInput)
 {
@@ -66,4 +66,21 @@ void PositionWiper(int Degrees)
     //divide by MAX_DEGREES and multiply by SERVO_RANGE and add REST_POSITION
     Degrees = Degrees * SERVO_RANGE / MAX_DEGREES + REST_POSITION;
     PWMUpdate(Degrees); //might need to convert to char
+}
+
+void sweep(void) //sweeps servo back and forth once
+{
+    PWMUpdate(REST_POSITION);
+    Delay10KTCYx(10);
+    Delay10KTCYx(10);
+    Delay10KTCYx(10);
+    Delay10KTCYx(10);
+    Delay10KTCYx(10);
+    PWMUpdate(EXTREME_POSITION);
+    Delay10KTCYx(10);
+    Delay10KTCYx(10);
+    Delay10KTCYx(10);
+    Delay10KTCYx(10);
+    Delay10KTCYx(10);
+    PWMUpdate(REST_POSITION);
 }
