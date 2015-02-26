@@ -28,7 +28,7 @@ void PWMSetup(char PWMInput)
 
     //Equation 15-2
     //PWM Duty Cycle = (CCPR1L:CCP1CON<5:4>)*TOSC*(TMR2 Prescale)
-    //this is in [Time_high]/Tpwm, not percent :) that was giving me a head ache
+    //this is in [Time_high]/Tpwm, not percent
     //for example: 50% duty cycle
     //0.5 * (1/488.28125) = (CCPR1L:CCP1CON<5:4>)*(1/8*10^6)*16
     //(CCPR1L:CCP1CON<5:4>) = 512 = 0.5*1024

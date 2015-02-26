@@ -51,10 +51,10 @@ void Request_Data(J1939_MESSAGE *MsgPtr, unsigned int DestAddr, unsigned int Dat
 
 void Set_Oscillator()
 {
-    // Run internal oscillator at 8 MHz
+    // Run internal oscillator at 4 MHz
     OSCCONbits.IRCF2 = 1;
     OSCCONbits.IRCF1 = 1;
-    OSCCONbits.IRCF0 = 1;
+    OSCCONbits.IRCF0 = 0;
 
     // Multiply frequency using PLL to 4* = 32 MHz
     //OSCTUNEbits.PLLEN = 1;

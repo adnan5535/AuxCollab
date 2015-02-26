@@ -11,10 +11,10 @@
 //constants specific to servo
 
 #define CENTER_POSITION //probably won't need
-#define REST_POSITION 15    //find rest position of the wiper for now its 50% duty cycle
-#define EXTREME_POSITION 200 //max wiper position
-#define SERVO_RANGE 185 //max - rest
-#define MAX_DEGREES 180  //furthest position of servo assuming WIPER_REST_POSTITION is zero degrees
+#define REST_POSITION 50    //find rest position of the wiper
+#define EXTREME_POSITION 141 //max wiper position
+#define SERVO_RANGE 91 //max - rest
+#define MAX_DEGREES 170  //furthest position of servo assuming WIPER_REST_POSTITION is zero degrees
 
 
 //put function declarations here

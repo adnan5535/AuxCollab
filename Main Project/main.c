@@ -75,6 +75,7 @@ int PrevServoTime;
 int ServoPeriod;
 int aangle;
 
+char x = 0;
 void main ()
  {
      InitEcoCar(); //disables a bunch of stuff
@@ -109,8 +110,24 @@ void main ()
      //enable low level interrupts
      INTCONbits.GIEL = 1;
 
-     
+     //test PWM
      while(1)
+     {
+         PWMUpdate(REST_POSITION);
+         Delay10KTCYx(10);
+         Delay10KTCYx(10);
+         Delay10KTCYx(10);
+         Delay10KTCYx(10);
+         Delay10KTCYx(10);
+         PWMUpdate(EXTREME_POSITION);
+         Delay10KTCYx(10);
+         Delay10KTCYx(10);
+         Delay10KTCYx(10);
+         Delay10KTCYx(10);
+         Delay10KTCYx(10);
+     }
+
+     while(0)
      {
          if(((PORTCbits.RC4 == 1) || ((aangle!=LeftEdge)) && ((CurrentTime-PrevServoTime)>ServoPeriod)))
          {
