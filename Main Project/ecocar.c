@@ -36,7 +36,6 @@ void Broadcast_Data(J1939_MESSAGE *MsgPtr, unsigned char DataType, unsigned char
 void Request_Data(J1939_MESSAGE *MsgPtr, unsigned int DestAddr, unsigned int DataType)
 {
 	// Requests specific data from a specific slave node. Only used by the master node.
-
 	MsgPtr->DataPage    =   0;
 	MsgPtr->Priority    =   J1939_CONTROL_PRIORITY;
 	MsgPtr->DestinationAddress = DestAddr;	// Destination address is the target slave node.

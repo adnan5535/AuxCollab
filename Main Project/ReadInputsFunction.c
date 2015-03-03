@@ -1,5 +1,6 @@
 #include "ReadInputsFunction.h"
 #include <p18cxxx.h>
+
 char InputRegister;
 //list of bits
 #define WIPER_SWITCH 0

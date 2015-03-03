@@ -24,6 +24,9 @@
  * 
  */
 
+unsigned int time1 = 0;
+unsigned int time2 = 0;
+unsigned int time3 = 0;
 unsigned int millis = 0; //keeps track of time.
 //min/max value depends on timer0 config
 //look at low isr
@@ -86,9 +89,8 @@ void main ()
  {
      InitEcoCar(); //disables a bunch of stuff
      //also sets clock rate
-     //I changed from 32 to 8 MHz
-     
-     SetIO(); //set up inputs and outputs
+     //I changed from 32 to 8 MHz    
+     SetIO(); //set up inputs and outputs     
      ReadInputs();
      PWMSetup(REST_POSITION);
 
@@ -186,15 +188,7 @@ void isr(void)
             Brake(OFF); //turn off brake lights
             INTCON2bits.INTEDG1 = 1; //set to rising edge
         }
-    }
-    else if (0)
-    {
-        //check next flag
-    }
-    else
-    {
-        //check last flag
-    }
+    } 
     INTCONbits.GIE = 1; //enable interrupts
 }
 
@@ -230,7 +224,15 @@ void low_isr(void)
         //timer0 overflow interval is (1/(FOSC))*4*prescaler*(2^16-1)
         //currectly 1/(4*10^6)*4*4*(2^8-1) = 262.14ms
         millis = millis + 262; //add interval to millis
-        LATAbits.LATA1 ^= 1;
+
+        //make a if statement run every second
+        if ((millis - time1) > 1000)
+        {
+            time1 = millis;
+            LATAbits.LATA1 ^= 1; //toggle error led (flashing lights cool)
+            ReadInputs();
+            //look at InputRegister
+        }
     }
 }
 
