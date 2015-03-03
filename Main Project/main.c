@@ -24,6 +24,10 @@
  * 
  */
 
+unsigned int millis = 0; //keeps track of time.
+//min/max value depends on timer0 config
+//look at low isr
+
 #define ON 1
 #define OFF 0
 
@@ -76,6 +80,8 @@ int ServoPeriod;
 int aangle;
 
 char x = 0;
+int flag=0;
+
 void main ()
  {
      InitEcoCar(); //disables a bunch of stuff
@@ -101,15 +107,27 @@ void main ()
      INTCON2bits.INTEDG1 = 1; //rising edge
      INTCON3bits.INT1IP = 1; //high priority
 
-     //setup timer1 interrupts for millis function
+     //setup timer0 interrupts for millis function
      //or some sort of timer function centiseconds, deciseconds, etc...
+     T0CONbits.T08BIT = 0; //16 bit timer/counter
+     T0CONbits.T0CS = 0; //internal instruction cycle clock
+     //T0CONbits.T0SE  //edge select
+     T0CONbits.PSA = 0; //prescaler is assigned
+     T0CONbits.T0PS2 = 0; //8 prescaler
+     T0CONbits.T0PS1 = 0;
+     T0CONbits.T0PS0 = 1;
+     //timer overflow interval is (1/(FOSC))*4*prescaler*(2^16-1)??
+     //use that value in low isr
+     T0CONbits.TMR0ON = 1; //enable
+     INTCONbits.TMR0IE = 1; //timer 1 overflow interrupt enable
+     INTCONbits.TMR0IF = 0; //clear flag
+     INTCON2bits.TMR0IP = 0; //low priority
 
      //enable high level interrupts
      INTCONbits.GIE = 1;
 
      //enable low level interrupts
      INTCONbits.GIEL = 1;
-
 
      sweep(); //test wiper
 
@@ -192,6 +210,42 @@ void high_interrupt(void){
     /* This is an assembly instruction. This efficiently calls our interrupt
      * service routine */
     _asm GOTO isr _endasm
+}
+
+/* There is actually a space at the end of this line and a line break after...
+ * This is important for some strange reason */
+#pragma code
+
+
+
+//////////////////THIS IS OUR LOW PRIORITY INTERRUPT SERVICE ROUTINE/////////////////////////
+/* SOME THINGS TO KEEP IN MIND :
+    Comments on the same line as the pragma statements here can cause problems*/
+#pragma interrupt low_isr
+void low_isr(void)
+{
+    if (INTCONbits.TMR0IE&&INTCONbits.TMR0IF) //if timer0 interrupt is enabled and triggered
+    {
+        INTCONbits.TMR0IF = 0; //clear flag
+        //timer0 overflow interval is (1/(FOSC))*4*prescaler*(2^16-1)
+        //currectly 1/(4*10^6)*4*4*(2^8-1) = 262.14ms
+        millis = millis + 262; //add interval to millis
+        LATAbits.LATA1 ^= 1;
+    }
+}
+
+//////////////////THIS IS OUR INTERRUPT/////////////////////////
+// This calls the interrupt service routine when the interrupt is called
+
+#pragma code low_vector = 0x18
+
+/* this 'function' can only be 8 bytes in length. This is why the code we want
+ * to run with our interrupt will be put in the interrupt service routine   */
+void low_interrupt(void){
+
+    /* This is an assembly instruction. This efficiently calls our interrupt
+     * service routine */
+    _asm GOTO low_isr _endasm
 }
 
 /* There is actually a space at the end of this line and a line break after...

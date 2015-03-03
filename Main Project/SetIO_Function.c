@@ -11,6 +11,8 @@ void SetIO(void)
      TRISCbits.TRISC0 = 0; //BRK_L_HIGH output
      TRISCbits.TRISC1 = 0; //BRK_R_HIGH output
 
+     TRISAbits.TRISA1 = 0; //error led
+
      //other inputs
      TRISCbits.TRISC4 = 1; //Wipers Switch input
      TRISCbits.TRISC5 = 1;
