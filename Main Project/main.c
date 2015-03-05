@@ -4,7 +4,7 @@
  *
  * Created on January 26, 2015, 6:28 PM
  */
-
+//written for C18 compiler
 #include <p18cxxx.h> 
 #include "J1939.h" 
 #include "ecocar.h"
@@ -33,6 +33,8 @@ unsigned int millis = 0; //keeps track of time.
 
 #define ON 1
 #define OFF 0
+#define LEFT 1
+#define RIGHT 2
 
 char OutputRegister;
  //list of bits
@@ -42,6 +44,44 @@ char OutputRegister;
 #define BLINK_L 3
 #define BLINK_R 4
 //bits 5 , 6 7 unused
+
+
+void Signal(int Signal_Input)
+{
+    //first make sure both rear lights are on or off based on whether brake lights are on or off
+    if (InputRegister&(1 << BRK_SWITCH))
+    {
+        Brake(ON);
+    }
+    else
+    {
+        Brake(OFF);
+    }
+    //make sure front signal lights are off
+    LATBbits.LATB4 = 0; //left off
+    LATBbits.LATB5 = 0; //right off
+
+    //Set signal lights according to input
+    if (Signal_Input == LEFT)
+    {
+        //toggle Left Signal light
+        LATBbits.LATB4 = 1; //front left on
+        LATCbits.LATC0 = 1; //back left
+        OutputRegister |= ( 1 << BLINK_L)|(1 << BRK_L_HIGH);
+    }
+    else if ( Signal_Input == RIGHT )
+    {
+        //toggle Right Signal Lights
+        LATBbits.LATB5 = 1; //Front right
+        LATCbits.LATC1 = 1; //back right on
+        OutputRegister |= (1 << BLINK_R)|(1 << BRK_R_HIGH);
+    }
+    else
+    {
+        //lights are already off
+        OutputRegister &= ~((1 << BLINK_L)|(1 << BLINK_R)|(1 << BRK_L_HIGH)|(1 << BRK_R_HIGH));
+    }
+}
 
 void Horn(char Horn_Input) //turns horn on and off
 {
@@ -109,8 +149,7 @@ void main ()
      INTCON2bits.INTEDG1 = 1; //rising edge
      INTCON3bits.INT1IP = 1; //high priority
 
-     //setup timer0 interrupts for millis function
-     //or some sort of timer function centiseconds, deciseconds, etc...
+     //setup timer0 interrupts for keeping track of time (millis);
      T0CONbits.T08BIT = 0; //16 bit timer/counter
      T0CONbits.T0CS = 0; //internal instruction cycle clock
      //T0CONbits.T0SE  //edge select
@@ -125,13 +164,15 @@ void main ()
      INTCONbits.TMR0IF = 0; //clear flag
      INTCON2bits.TMR0IP = 0; //low priority
 
-     //enable high level interrupts
-     INTCONbits.GIE = 1;
-
      //enable low level interrupts
      INTCONbits.GIEL = 1;
 
-     sweep(); //test wiper
+     //enable high level interrupts
+     INTCONbits.GIE = 1;
+
+
+
+     //sweep(); //test wiper
 
      while(0)
      {
@@ -229,9 +270,9 @@ void low_isr(void)
         if ((millis - time1) > 1000)
         {
             time1 = millis;
+            InputRegister ^= (1 << TOGGLE_BIT);
             LATAbits.LATA1 ^= 1; //toggle error led (flashing lights cool)
-            ReadInputs();
-            //look at InputRegister
+            ReadInputs(); //update input register
         }
     }
 }

@@ -1,21 +1,11 @@
 #include "ReadInputsFunction.h"
 #include <p18cxxx.h>
 
-char InputRegister;
-//list of bits
-#define WIPER_SWITCH 0
-#define HAZ_SWITCH 1
-#define HORN_SWITCH 2
-#define BLINK_L_SWITCH 3
-#define BLINK_R_SWITCH 4
-//bits 5 , 6 and 7 unused
-
-
-char ReadInputs(void)
+unsigned char InputRegister;
+unsigned char ReadInputs(void)
  {
      INTCONbits.GIE = 0; //disable interrupts
      //clear InputRegister
-     InputRegister = 0;
      //check WIPER_SWITCH
      if(PORTCbits.RC4 == 1)
      {
@@ -61,6 +51,16 @@ char ReadInputs(void)
      {
          InputRegister &= ~(1 << BLINK_R_SWITCH);
      }
+     //check BRK_SWITCH
+     if(PORTBbits.RB1 == 1)
+     {
+         InputRegister |= (1 << BRK_SWITCH);
+     }
+     else
+     {
+         InputRegister &= ~(1 << BRK_SWITCH);
+     }
+
      INTCONbits.GIE = 1; //enable interrupts
      return(InputRegister);
  }
