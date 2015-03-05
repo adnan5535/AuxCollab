@@ -1,1 +1,2 @@
-Error[yy] G:\Documents\AuxCollab\Main Project\ReadInputsFunction.c 9 : syntax error
+Warning[2060] G:\Documents\AuxCollab\Main Project\ReadInputsFunction.c 12 : shift expression has no effect
+Warning[2060] G:\Documents\AuxCollab\Main Project\ReadInputsFunction.c 16 : shift expression has no effect

@@ -30,6 +30,8 @@
     <itemPath>SetIO_Function.h</itemPath>
     <itemPath>Servo_Functions.h</itemPath>
     <itemPath>Servo_Functions.c</itemPath>
+    <itemPath>LightOutput_Functions.c</itemPath>
+    <itemPath>LightOutput_Functions.h</itemPath>
   </logicalFolder>
   <sourceRootList>
     <Elem>Common</Elem>

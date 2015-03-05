@@ -8,7 +8,7 @@
 #ifndef READINPUTSFUNCTION_H
 #define	READINPUTSFUNCTION_H
 
-extern int InputRegister; //global variable
+extern unsigned char InputRegister; //global variable
 //list of bits
 #define WIPER_SWITCH 0
 #define HAZ_SWITCH 1
@@ -17,7 +17,6 @@ extern int InputRegister; //global variable
 #define BLINK_R_SWITCH 4
 #define BRK_SWITCH 5
 //bit 6 unused
-#define TOGGLE_BIT 7
 
 //Function Protype Declarations for ReadInputsFunction.c
 unsigned char ReadInputs(void);

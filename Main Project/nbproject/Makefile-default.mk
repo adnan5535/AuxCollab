@@ -45,17 +45,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=main.c J1939.C ecocar.c ReadInputsFunction.c SetIO_Function.c Servo_Functions.c
+SOURCEFILES_QUOTED_IF_SPACED=main.c J1939.C ecocar.c ReadInputsFunction.c SetIO_Function.c Servo_Functions.c LightOutput_Functions.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/J1939.o ${OBJECTDIR}/ecocar.o ${OBJECTDIR}/ReadInputsFunction.o ${OBJECTDIR}/SetIO_Function.o ${OBJECTDIR}/Servo_Functions.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/J1939.o.d ${OBJECTDIR}/ecocar.o.d ${OBJECTDIR}/ReadInputsFunction.o.d ${OBJECTDIR}/SetIO_Function.o.d ${OBJECTDIR}/Servo_Functions.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/J1939.o ${OBJECTDIR}/ecocar.o ${OBJECTDIR}/ReadInputsFunction.o ${OBJECTDIR}/SetIO_Function.o ${OBJECTDIR}/Servo_Functions.o ${OBJECTDIR}/LightOutput_Functions.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/J1939.o.d ${OBJECTDIR}/ecocar.o.d ${OBJECTDIR}/ReadInputsFunction.o.d ${OBJECTDIR}/SetIO_Function.o.d ${OBJECTDIR}/Servo_Functions.o.d ${OBJECTDIR}/LightOutput_Functions.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/J1939.o ${OBJECTDIR}/ecocar.o ${OBJECTDIR}/ReadInputsFunction.o ${OBJECTDIR}/SetIO_Function.o ${OBJECTDIR}/Servo_Functions.o
+OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/J1939.o ${OBJECTDIR}/ecocar.o ${OBJECTDIR}/ReadInputsFunction.o ${OBJECTDIR}/SetIO_Function.o ${OBJECTDIR}/Servo_Functions.o ${OBJECTDIR}/LightOutput_Functions.o
 
 # Source Files
-SOURCEFILES=main.c J1939.C ecocar.c ReadInputsFunction.c SetIO_Function.c Servo_Functions.c
+SOURCEFILES=main.c J1939.C ecocar.c ReadInputsFunction.c SetIO_Function.c Servo_Functions.c LightOutput_Functions.c
 
 
 CFLAGS=
@@ -137,6 +137,14 @@ ${OBJECTDIR}/Servo_Functions.o: Servo_Functions.c  nbproject/Makefile-${CND_CONF
 	@${DEP_GEN} -d ${OBJECTDIR}/Servo_Functions.o 
 	@${FIXDEPS} "${OBJECTDIR}/Servo_Functions.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
 	
+${OBJECTDIR}/LightOutput_Functions.o: LightOutput_Functions.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/LightOutput_Functions.o.d 
+	@${RM} ${OBJECTDIR}/LightOutput_Functions.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -p$(MP_PROCESSOR_OPTION) -ms -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/LightOutput_Functions.o   LightOutput_Functions.c 
+	@${DEP_GEN} -d ${OBJECTDIR}/LightOutput_Functions.o 
+	@${FIXDEPS} "${OBJECTDIR}/LightOutput_Functions.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
+	
 else
 ${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -185,6 +193,14 @@ ${OBJECTDIR}/Servo_Functions.o: Servo_Functions.c  nbproject/Makefile-${CND_CONF
 	${MP_CC} $(MP_EXTRA_CC_PRE) -p$(MP_PROCESSOR_OPTION) -ms -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/Servo_Functions.o   Servo_Functions.c 
 	@${DEP_GEN} -d ${OBJECTDIR}/Servo_Functions.o 
 	@${FIXDEPS} "${OBJECTDIR}/Servo_Functions.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
+	
+${OBJECTDIR}/LightOutput_Functions.o: LightOutput_Functions.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/LightOutput_Functions.o.d 
+	@${RM} ${OBJECTDIR}/LightOutput_Functions.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -p$(MP_PROCESSOR_OPTION) -ms -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/LightOutput_Functions.o   LightOutput_Functions.c 
+	@${DEP_GEN} -d ${OBJECTDIR}/LightOutput_Functions.o 
+	@${FIXDEPS} "${OBJECTDIR}/LightOutput_Functions.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
 	
 endif
 

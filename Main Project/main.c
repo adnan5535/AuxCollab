@@ -12,9 +12,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 //add these to project as existing files if it won't compile
-#include "ReadInputsFunction.h"
-#include "SetIO_Function.h"
-#include "Servo_Functions.h"
 
 #pragma config OSC = IRCIO67    // Oscillator Selection Bit: IRCIO67 isn't anywhere in datasheet...???...???
 #pragma config BOREN = OFF      // Brown-out Reset disabled in hardware and software
@@ -24,94 +21,27 @@
  * 
  */
 
-unsigned int time1 = 0;
-unsigned int time2 = 0;
-unsigned int time3 = 0;
+#include "ReadInputsFunction.h"
+#include "SetIO_Function.h"
+#include "Servo_Functions.h"
+#include "LightOutput_Functions.h" //this file has a definition for OFF = 0 which messes with config statements above ^^^^
+                                   //fix by putting after config statements
+                                   //would probably be better to just to change ON/OFF to HIGH/LOW
+
+
+unsigned int Time1 = 0;
+unsigned int Time2 = 0;
+unsigned int Time3 = 0;
+unsigned int ReadTimeInterval = 100;  //the interval that we read inputs at
+unsigned int MainTimeInterval = 1000; //the interval that everything flashes at
+unsigned int ServoTimeInterval = 1000; //the interval the servo switches at
+unsigned char ToggleBit = 0; //for toggling lights on or off every TimeInterval2
+unsigned char ToggleCompare = 1; //toggle is a weird word
 unsigned int millis = 0; //keeps track of time.
 //min/max value depends on timer0 config
 //look at low isr
 
-#define ON 1
-#define OFF 0
-#define LEFT 1
-#define RIGHT 2
 
-char OutputRegister;
- //list of bits
-#define HORN_FET 0
-#define BRK_L_HIGH 1
-#define BRK_R_HIGH 2
-#define BLINK_L 3
-#define BLINK_R 4
-//bits 5 , 6 7 unused
-
-
-void Signal(int Signal_Input)
-{
-    //first make sure both rear lights are on or off based on whether brake lights are on or off
-    if (InputRegister&(1 << BRK_SWITCH))
-    {
-        Brake(ON);
-    }
-    else
-    {
-        Brake(OFF);
-    }
-    //make sure front signal lights are off
-    LATBbits.LATB4 = 0; //left off
-    LATBbits.LATB5 = 0; //right off
-
-    //Set signal lights according to input
-    if (Signal_Input == LEFT)
-    {
-        //toggle Left Signal light
-        LATBbits.LATB4 = 1; //front left on
-        LATCbits.LATC0 = 1; //back left
-        OutputRegister |= ( 1 << BLINK_L)|(1 << BRK_L_HIGH);
-    }
-    else if ( Signal_Input == RIGHT )
-    {
-        //toggle Right Signal Lights
-        LATBbits.LATB5 = 1; //Front right
-        LATCbits.LATC1 = 1; //back right on
-        OutputRegister |= (1 << BLINK_R)|(1 << BRK_R_HIGH);
-    }
-    else
-    {
-        //lights are already off
-        OutputRegister &= ~((1 << BLINK_L)|(1 << BLINK_R)|(1 << BRK_L_HIGH)|(1 << BRK_R_HIGH));
-    }
-}
-
-void Horn(char Horn_Input) //turns horn on and off
-{
-    if (Horn_Input)
-    {
-        LATAbits.LATA0 = 1;
-        OutputRegister |= (1 << HORN_FET);
-    }
-    else
-    {
-        LATAbits.LATA0 = 0;
-        OutputRegister &= ~(1 << HORN_FET);
-    }
-}
-
-void Brake(char Brake_Input) //turns brake lights on and off
-{
-    if(Brake_Input)
-    {
-        LATCbits.LATC0 = 1;
-        LATCbits.LATC1 = 1;
-        OutputRegister |= (1 << BRK_L_HIGH) | (1 << BRK_R_HIGH);
-    }
-    else
-    {
-        LATCbits.LATC0 = 0;
-        LATCbits.LATC1 = 0;
-        OutputRegister &= ~( (1 << BRK_L_HIGH) | (1 << BRK_R_HIGH) );
-    }
-}
 
 //wiper variables
 int ttarget;
@@ -129,7 +59,7 @@ void main ()
  {
      InitEcoCar(); //disables a bunch of stuff
      //also sets clock rate
-     //I changed from 32 to 8 MHz    
+     //I changed from 32 to 4 MHz
      SetIO(); //set up inputs and outputs     
      ReadInputs();
      PWMSetup(REST_POSITION);
@@ -170,9 +100,30 @@ void main ()
      //enable high level interrupts
      INTCONbits.GIE = 1;
 
-
-
      //sweep(); //test wiper
+
+     while(1)
+     {
+         LATAbits.LATA1 = ToggleBit; //flash error led (flashing lights cool)
+         if (ToggleBit == ToggleCompare) //ToggleBit has changed
+         {
+             if(ToggleBit)
+             {
+                 //ToggleBit and ToggleCompare are both high
+                 ToggleCompare = 0; //make ToggleCompare different again
+                 //Turn lights that flash off
+                 Signal(OFF);
+                 //Haz(OFF); does exact same thing
+             }
+             if(~ToggleBit)
+             {
+                 //ToggleBit and ToggleCompare are both low
+                 ToggleCompare = 1; //make ToggleCompare different again
+                 //Turn lights that flash on
+                 //a bunch of if statements checking input register
+             }
+         }
+     }
 
      while(0)
      {
@@ -233,6 +184,8 @@ void isr(void)
     INTCONbits.GIE = 1; //enable interrupts
 }
 
+
+
 //////////////////THIS IS OUR INTERRUPT/////////////////////////
 // This calls the interrupt service routine when the interrupt is called
 
@@ -266,13 +219,18 @@ void low_isr(void)
         //currectly 1/(4*10^6)*4*4*(2^8-1) = 262.14ms
         millis = millis + 262; //add interval to millis
 
-        //make a if statement run every second
-        if ((millis - time1) > 1000)
+        //make a if statement run every MainTimeInterval
+        if ((millis - Time1) > MainTimeInterval)
         {
-            time1 = millis;
-            InputRegister ^= (1 << TOGGLE_BIT);
-            LATAbits.LATA1 ^= 1; //toggle error led (flashing lights cool)
-            ReadInputs(); //update input register
+            Time1 = millis;
+            ToggleBit ^= 1; //this bit toggles ever MainTimeInterval
+                            //can use to make everything flash on or off
+        }
+        //read inputs every ReadTimeInterval
+        if ((millis - Time2) > ReadTimeInterval)
+        {
+            Time2 = millis;
+            ReadInputs(); //update input register every MainTimeInterval
         }
     }
 }
