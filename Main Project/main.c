@@ -32,13 +32,16 @@
 unsigned int Time1 = 0;
 unsigned int Time2 = 0;
 unsigned int Time3 = 0;
-unsigned int ReadTimeInterval = 100;  //the interval that we read inputs at
-unsigned int MainTimeInterval = 1000; //the interval that everything flashes at
+unsigned int ReadTimeInterval = 200;  //the interval that we read inputs at
+unsigned int MainTimeInterval = 500; //the interval that everything flashes at
 unsigned int ServoTimeInterval = 1000; //the interval the servo switches at
-unsigned char ToggleBit = 0; //for toggling lights on or off every TimeInterval2
+unsigned char ToggleByte = 0; //for toggling lights on or off every TimeInterval2
 unsigned char ToggleCompare = 1; //toggle is a weird word
+unsigned char ServoTimingBit = 0;
+unsigned char ServoCompareBit = 1;
+unsigned char ServoPosition = 0;
 unsigned int millis = 0; //keeps track of time.
-//min/max value depends on timer0 config
+//min value depends on timer0 config
 //look at low isr
 
 
@@ -61,7 +64,7 @@ void main ()
      //also sets clock rate
      //I changed from 32 to 4 MHz
      SetIO(); //set up inputs and outputs     
-     ReadInputs();
+     ReadInputs(); //update input register
      PWMSetup(REST_POSITION);
 
      //enable interrupt priorities
@@ -84,9 +87,9 @@ void main ()
      T0CONbits.T0CS = 0; //internal instruction cycle clock
      //T0CONbits.T0SE  //edge select
      T0CONbits.PSA = 0; //prescaler is assigned
-     T0CONbits.T0PS2 = 0; //8 prescaler
+     T0CONbits.T0PS2 = 0; //2 prescaler
      T0CONbits.T0PS1 = 0;
-     T0CONbits.T0PS0 = 1;
+     T0CONbits.T0PS0 = 0;
      //timer overflow interval is (1/(FOSC))*4*prescaler*(2^16-1)??
      //use that value in low isr
      T0CONbits.TMR0ON = 1; //enable
@@ -104,10 +107,35 @@ void main ()
 
      while(1)
      {
-         LATAbits.LATA1 = ToggleBit; //flash error led (flashing lights cool)
-         if (ToggleBit == ToggleCompare) //ToggleBit has changed
+         LATAbits.LATA1 = ToggleByte; //flash error led (flashing lights cool)
+         
+         //move servo motor
+         if (ServoTimingBit != ServoCompareBit) //Servo Timing Bit has Changed
          {
-             if(ToggleBit)
+             if(ServoTimingBit)
+             {
+                 ServoCompareBit = 0; //make ServoCompareBit different
+                 if ((InputRegister & (1 << WIPER_SWITCH)))
+                 {
+                     ServoPosition = PWMUpdate(EXTREME_POSITION);
+                 }
+                 else
+                 {
+                     ServoPosition = PWMUpdate(REST_POSITION);
+                 }
+             }
+             else
+             {
+                 ServoCompareBit = 1; //make ServoCompareBit different
+                 ServoPosition = PWMUpdate(REST_POSITION);
+             }
+         }
+
+
+         //turn on/off signal/hazard lights
+         if (ToggleByte == ToggleCompare) //ToggleBit has changed
+         {
+             if(ToggleByte)
              {
                  //ToggleBit and ToggleCompare are both high
                  ToggleCompare = 0; //make ToggleCompare different again
@@ -115,33 +143,28 @@ void main ()
                  Signal(OFF);
                  //Haz(OFF); does exact same thing
              }
-             if(~ToggleBit)
+             if(~ToggleByte)
              {
                  //ToggleBit and ToggleCompare are both low
-                 ToggleCompare = 1; //make ToggleCompare different again
+                 ToggleCompare = 0xff; //make ToggleCompare different again
                  //Turn lights that flash on
-                 //a bunch of if statements checking input register
-             }
-         }
-     }
-
-     while(0)
-     {
-         if(((PORTCbits.RC4 == 1) || ((aangle!=LeftEdge)) && ((CurrentTime-PrevServoTime)>ServoPeriod)))
-         {
-             if (aangle==ttarget)
-             {
-                 if(ttarget==RightEdge)
+                 if (InputRegister & (1 << HAZ_SWITCH)) //hazard lights take presidence over signal lights
                  {
-                     ttarget=LeftEdge;
+                     Haz(ON);
+                 }
+                 else if (InputRegister & (1 << BLINK_L_SWITCH))
+                 {
+                     Signal(LEFT);
+                 }
+                 else if (InputRegister & (1 << BLINK_R_SWITCH))
+                 {
+                     Signal(RIGHT);
                  }
                  else
                  {
-                         ttarget=RightEdge;
+                     Signal(OFF);
                  }
              }
- 
-             //LATCbits.LATC2 = 1;
          }
      }
 }
@@ -216,14 +239,14 @@ void low_isr(void)
     {
         INTCONbits.TMR0IF = 0; //clear flag
         //timer0 overflow interval is (1/(FOSC))*4*prescaler*(2^16-1)
-        //currectly 1/(4*10^6)*4*4*(2^8-1) = 262.14ms
-        millis = millis + 262; //add interval to millis
+        //currectly 1/(4*10^6)*4*2*(2^8-1) = 131.07ms
+        millis = millis + 131; //add interval to millis
 
         //make a if statement run every MainTimeInterval
         if ((millis - Time1) > MainTimeInterval)
         {
             Time1 = millis;
-            ToggleBit ^= 1; //this bit toggles ever MainTimeInterval
+            ToggleByte ^= 1; //this bit toggles ever MainTimeInterval
                             //can use to make everything flash on or off
         }
         //read inputs every ReadTimeInterval
@@ -231,6 +254,12 @@ void low_isr(void)
         {
             Time2 = millis;
             ReadInputs(); //update input register every MainTimeInterval
+        }
+        //servo moves every ServoTimeInterval
+        if ((millis -Time3) > ServoTimeInterval)
+        {
+            Time3 = millis;
+            ServoTimingBit ^= 1;
         }
     }
 }

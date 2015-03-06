@@ -19,7 +19,7 @@
 
 //put function declarations here
 void PWMSetup(char PWMInput); //call with PWMSetup(REST_POSITION)
-void PWMUpdate(char PWMInput); //updates duty cycle (0 to 255)
+unsigned char PWMUpdate(char PWMInput); //updates duty cycle (0 to 255)
 void PositionWiper(int Degrees);
 void sweep(void); //sweeps servo back and forth once
 

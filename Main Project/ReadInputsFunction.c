@@ -4,8 +4,6 @@
 unsigned char InputRegister;
 unsigned char ReadInputs(void)
  {
-     INTCONbits.GIE = 0; //disable interrupts
-     //clear InputRegister
      //check WIPER_SWITCH
      if(PORTCbits.RC4 == 1)
      {
@@ -61,7 +59,7 @@ unsigned char ReadInputs(void)
          InputRegister &= ~(1 << BRK_SWITCH);
      }
 
-     INTCONbits.GIE = 1; //enable interrupts
+     
      return(InputRegister);
  }
 

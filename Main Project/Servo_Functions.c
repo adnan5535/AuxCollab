@@ -54,9 +54,10 @@ void PWMSetup(char PWMInput)
 
 
 //updates duty cycle: 0 to 255
-void PWMUpdate(char PWMInput)
+unsigned char PWMUpdate(char PWMInput)
 {
     CCPR1L = PWMInput;
+    return(PWMInput);
 }
 
 //Position wiper to a certain degree

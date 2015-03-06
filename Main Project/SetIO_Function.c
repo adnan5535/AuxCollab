@@ -13,12 +13,18 @@ void SetIO(void)
 
      TRISAbits.TRISA1 = 0; //error led
 
-     //other inputs
      TRISCbits.TRISC4 = 1; //Wipers Switch input
-     TRISCbits.TRISC5 = 1;
-     TRISCbits.TRISC6 = 1;
-     TRISCbits.TRISC7 = 1;
+     TRISCbits.TRISC2=0; //SERVO (For the Wipers)
+
+     TRISCbits.TRISC5 = 1;//Hazards switch
+
+     TRISCbits.TRISC6 = 1;//right signal switch
+     TRISCbits.TRISC7 = 1;//left signal switch
+
+     TRISBbits.TRISB4 = 0; //left signal light
+     TRISBbits.TRISB5 = 0; //right signal light
+
 
      //other outputs
-     TRISCbits.TRISC2=0; //SERVO (For the Wipers)
+
 }
