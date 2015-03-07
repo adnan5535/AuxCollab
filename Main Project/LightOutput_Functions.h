@@ -21,12 +21,15 @@ extern unsigned char OutputRegister;
 #define BRK_R_HIGH 2
 #define BLINK_L 3
 #define BLINK_R 4
-//bits 5 , 6 7 unused
+#define ERROR 5
+#define SERVO 6
+//bit 7 unused
 
-void Haz(char HazInput);
-void Horn(char HornInput);
-void Brake(char BrakeInput);
-void Signal(char SignalInput);
+void Error(unsigned char ErrorInput); //Turns Error led ON or OFF
+void Haz(unsigned char HazInput); //Turns Hazard lights ON or OFF
+void Horn(unsigned char HornInput); //Turns Horn ON or OFF
+void Brake(unsigned char BrakeInput); //Turns Brake lights ON or OFF
+void Signal(unsigned char SignalInput); //Signals LEFT or RIGHT or turns lights OFF
 
 
 

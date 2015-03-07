@@ -5,7 +5,20 @@
 unsigned char OutputRegister;
 
 
-void Haz(char HazInput)
+void Error(unsigned char ErrorInput) //turns error led on and off
+{
+    if (ErrorInput)
+    {
+        LATAbits.LATA1 = 1;
+    }
+    else
+    {
+        LATAbits.LATA1 = 0;
+    }
+}
+
+
+void Haz(unsigned char HazInput)
 {
     if (HazInput)
     {
@@ -26,13 +39,13 @@ void Haz(char HazInput)
         //LATCbits.LATC1 = 0; //back right
         //update output register
         //OutputRegister &= ~((1 << BLINK_L)|(1 << BLINK_R)|(1 << BRK_L_HIGH)|(1 << BRK_R_HIGH));
-        Signal(OFF); //Signal deals with this better
+        Signal(OFF); //Signal deals with this already, might as well save code
     }
 }
 
 
 
-void Horn(char HornInput) //turns horn on and off
+void Horn(unsigned char HornInput) //turns horn on and off
 {
     if (HornInput)
     {
@@ -46,7 +59,7 @@ void Horn(char HornInput) //turns horn on and off
     }
 }
 
-void Brake(char BrakeInput) //turns brake lights on and off
+void Brake(unsigned char BrakeInput) //turns brake lights on and off
 {
     if(BrakeInput)
     {
@@ -63,7 +76,7 @@ void Brake(char BrakeInput) //turns brake lights on and off
 }
 
 
-void Signal(char SignalInput)
+void Signal(unsigned char SignalInput)
 {
     //first make sure both rear lights are on or off based on whether brake lights are on or off
     if (InputRegister&(1 << BRK_SWITCH))
