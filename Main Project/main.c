@@ -103,6 +103,24 @@ void main ()
      LATAbits.LATA1 = 0;
      while(mode == TEST_MODE) //test loop
      {
+         //on monday we will be able to test wiper and haz switch by blinking error led
+         ReadInputs();
+         if (InputRegister & (1 << HAZ_SWITCH))
+         {
+             Error(ON);
+         }
+         else
+         {
+             Error(OFF);
+         }
+         if (InputRegister & ( 1 << WIPER_SWITCH))
+         {
+             Error(ON);
+         }
+         else
+         {
+             Error(OFF);
+         }
      }
 
 
