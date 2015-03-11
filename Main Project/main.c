@@ -11,11 +11,12 @@
 #include <delays.h>  
 #include <stdio.h>
 #include <stdlib.h>
-//add these to project as existing files if it won't compile
+
 
 #pragma config OSC = IRCIO67    // Oscillator Selection Bit: IRCIO67 isn't anywhere in datasheet...???...???
 #pragma config BOREN = OFF      // Brown-out Reset disabled in hardware and software
 #pragma config WDT = OFF        // Watchdog Timer disabled (control is placed on the SWDTEN bit)
+#pragma config LVP = OFF        // Single-Supply ICSP Enable bit (Single-Supply ICSP disabled)
 
 /*
  * 
@@ -31,7 +32,7 @@
 //To different loops in main function one for normal opperation and one might be useful for debugging
 #define TEST_MODE 7
 #define RUN_MODE 6
-unsigned char mode = TEST_MODE; //select mode here
+unsigned char mode = RUN_MODE; //select mode here
 
 
 unsigned int Time1 = 0;
@@ -40,12 +41,12 @@ unsigned int Time3 = 0;
 
 unsigned int ReadTimeInterval = 250;  //the interval that we read inputs at
 unsigned int MainTimeInterval = 500; //the interval that everything flashes at
-unsigned int ServoTimeInterval = 2000; //the interval the servo switches at
+unsigned int ServoTimeInterval = 1500; //the interval the servo switches at
 
 unsigned char ToggleByte = 0; //for toggling lights on or off every MainTimeInterval
 unsigned char ToggleCompare = 1; //toggle is a weird word
-unsigned char ServoTimingBit = 0;
-unsigned char ServoCompareBit = 1;
+unsigned char ServoTimingByte = 0;
+unsigned char ServoCompareByte = 0xff;
 unsigned char ServoPosition = 0; //change this to output register
 unsigned int millis = 0; //keeps track of time.
 //min value depends on timer0 config
@@ -104,14 +105,14 @@ void main ()
      while(mode == TEST_MODE) //test loop
      {
          ReadInputs();
-         if ((InputRegister & (1 << HAZ_SWITCH))|(InputRegister & (1 << WIPER_SWITCH)))
-         {
-             Error(ON);
-         }
-         if (~(InputRegister & ((1 << HAZ_SWITCH) | (1 << WIPER_SWITCH))))
-         {
-             Error(OFF);
-         }
+         //compare time to time intervals
+        if ((millis - Time1) > MainTimeInterval) //Signal and Haz lights flash at MainTimeInterval
+        {
+            Time1 = millis;
+            ToggleByte ^= 0xff; //this byte toggles between 0 and all ones every MainTimeInterval
+                            //can use to make everything flash on or off
+        }
+
      }
 
 
@@ -134,7 +135,7 @@ void main ()
         if ((millis -Time3) > ServoTimeInterval)
         {
             Time3 = millis;
-            ServoTimingBit ^= 1; //this bit is used to decide where/when to adjust servo
+            ServoTimingByte ^= 0xff; //this bit is used to decide where/when to adjust servo
         }
 
 
@@ -142,64 +143,34 @@ void main ()
          Error(ToggleByte); //flash error led (flashing lights cool)
          
          //move servo motor
-         if (ServoTimingBit != ServoCompareBit) //Servo Timing Bit has Changed
+         if (InputRegister & (1 << WIPER_SWITCH) & ServoTimingByte)
          {
-             if(ServoTimingBit) //bit is high
-             {
-                 ServoCompareBit = 0; //make ServoCompareBit different
-                 if ((InputRegister & (1 << WIPER_SWITCH))) //switch is on
-                 {
-                     ServoPosition = PWMUpdate(EXTREME_POSITION); //move wiper to one side
-                 }
-                 else //switch is off
-                 {
-                     ServoPosition = PWMUpdate(REST_POSITION); //move wiper to rest position
-                 }
-             }
-             else //bit is low
-             {
-                 ServoCompareBit = 1; //make ServoCompareBit different
-                 ServoPosition = PWMUpdate(REST_POSITION); //move back to rest position
-             }
+             ServoPosition = PWMUpdate(EXTREME_POSITION);
+         }
+         else
+         {
+             ServoPosition = PWMUpdate(REST_POSITION);
          }
 
 
-         //turn on/off signal/hazard lights
-         if (ToggleByte == ToggleCompare) //ToggleBit has changed
-         {
-             if(ToggleByte) //byte is high
-             {
-                 //ToggleBit and ToggleCompare are both high
-                 ToggleCompare = 0; //make ToggleCompare different again
-                 //Turn lights that flash off
-                 Signal(OFF);
-                 //Haz(OFF); does exact same thing so don't need
-             }
-             if(~ToggleByte) //byte is low
-             {
-                 //ToggleBit and ToggleCompare are both low
-                 ToggleCompare = 0xff; //make ToggleCompare different again
-                 //Turn lights that flash on
-                 if (InputRegister & (1 << HAZ_SWITCH)) //hazard lights take presidence over signal lights
-                 {
-                     Haz(ON);
-                 }
-                 //if hazard lights aren't on check signal lights
-                 else if (InputRegister & (1 << BLINK_L_SWITCH))
-                 {
-                     Signal(LEFT);
-                 }
-                 else if (InputRegister & (1 << BLINK_R_SWITCH))
-                 {
-                     Signal(RIGHT);
-                 }
-                 else //nothing's on so shut lights off
-                 {
-                     Signal(OFF);
-                 }
-             }
-         }
-     }
+        //turn on/off signal/hazard lights
+        if (InputRegister & (1 << BLINK_R_SWITCH))
+        {
+            Signal(RIGHT&ToggleByte);
+        }
+        else if (InputRegister & (1 << BLINK_L_SWITCH))
+        {
+            Signal(LEFT&ToggleByte);
+        }
+        else if (InputRegister & ( 1 << HAZ_SWITCH))
+        {
+            Haz(ON&ToggleByte);
+        }
+        else
+        {
+            Signal(OFF);
+        }
+   }
 }
 
 
