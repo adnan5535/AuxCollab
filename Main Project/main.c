@@ -104,15 +104,8 @@ void main ()
      LATAbits.LATA1 = 0;
      while(mode == TEST_MODE) //test loop
      {
-         ReadInputs();
-         //compare time to time intervals
-        if ((millis - Time1) > MainTimeInterval) //Signal and Haz lights flash at MainTimeInterval
-        {
-            Time1 = millis;
-            ToggleByte ^= 0xff; //this byte toggles between 0 and all ones every MainTimeInterval
-                            //can use to make everything flash on or off
-        }
-
+         LATBbits.LATB4 = 0;
+         LATBbits.LATB5 = 0;
      }
 
 
