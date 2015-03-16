@@ -29,6 +29,7 @@
                                    //fix by putting after config statements
                                    //would probably be better to just to change ON/OFF to HIGH/LOW
 
+
 //To different loops in main function one for normal opperation and one might be useful for debugging
 #define TEST_MODE 7
 #define RUN_MODE 6
@@ -46,8 +47,8 @@ unsigned int ServoTimeInterval = 1500; //the interval the servo switches at
 unsigned char ToggleByte = 0; //for toggling lights on or off every MainTimeInterval
 unsigned char ToggleCompare = 1; //toggle is a weird word
 unsigned char ServoTimingByte = 0;
-unsigned char ServoCompareByte = 0xff;
 unsigned char ServoPosition = 0; //change this to output register
+
 unsigned int millis = 0; //keeps track of time.
 //min value depends on timer0 config
 //look at low isr
@@ -102,10 +103,17 @@ void main ()
 
 
      LATAbits.LATA1 = 0;
+
      while(mode == TEST_MODE) //test loop
      {
-         LATBbits.LATB4 = 0;
-         LATBbits.LATB5 = 0;
+         if (InputRegister & (1 << WIPER_SWITCH))
+         {
+             Error(ON);
+         }
+         else
+         {
+             Error(OFF);
+         }
      }
 
 
@@ -125,25 +133,24 @@ void main ()
             ReadInputs(); //update input register every MainTimeInterval
         }
         //servo moves every ServoTimeInterval
-        if ((millis -Time3) > ServoTimeInterval)
+        if ((millis - Time3) > ServoTimeInterval)
         {
             Time3 = millis;
             ServoTimingByte ^= 0xff; //this bit is used to decide where/when to adjust servo
+            if (ServoTimingByte & (InputRegister & (1 << WIPER_SWITCH)))
+            {
+                ServoPosition = PWMUpdate(FAR_POSITION);
+            }
+            else
+            {
+                ServoPosition = PWMUpdate(REST_POSITION);
+            }
         }
 
 
 
          Error(ToggleByte); //flash error led (flashing lights cool)
          
-         //move servo motor
-         if (InputRegister & (1 << WIPER_SWITCH) & ServoTimingByte)
-         {
-             ServoPosition = PWMUpdate(EXTREME_POSITION);
-         }
-         else
-         {
-             ServoPosition = PWMUpdate(REST_POSITION);
-         }
 
 
         //turn on/off signal/hazard lights

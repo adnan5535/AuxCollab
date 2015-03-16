@@ -12,7 +12,7 @@
 
 #define CENTER_POSITION //probably won't need
 #define REST_POSITION 50    //find rest position of the wiper
-#define EXTREME_POSITION 141 //max wiper position
+#define FAR_POSITION 141 //max wiper position
 #define SERVO_RANGE 91 //max - rest
 #define MAX_DEGREES 170  //furthest position of servo assuming WIPER_REST_POSTITION is zero degrees
 
@@ -20,7 +20,6 @@
 //put function declarations here
 void PWMSetup(char PWMInput); //call with PWMSetup(REST_POSITION)
 unsigned char PWMUpdate(char PWMInput); //updates duty cycle (0 to 255)
-void PositionWiper(int Degrees);
 void sweep(void); //sweeps servo back and forth once
 
 #endif	/* SERVO_FUNCTIONS_H */

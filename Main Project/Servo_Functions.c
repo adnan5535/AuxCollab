@@ -77,7 +77,7 @@ void sweep(void) //sweeps servo back and forth once
     Delay10KTCYx(10);
     Delay10KTCYx(10);
     Delay10KTCYx(10);
-    PWMUpdate(EXTREME_POSITION);
+    PWMUpdate(FAR_POSITION);
     Delay10KTCYx(10);
     Delay10KTCYx(10);
     Delay10KTCYx(10);
