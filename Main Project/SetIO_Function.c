@@ -3,6 +3,10 @@
 
 void SetIO(void)
 {
+     //turn off all outputs
+     LATB = 0;
+     LATA = 0;
+     LATC = 0;
      //set up input/ouputs
      TRISBbits.TRISB0 = 1;//HORN_SWITCH input
      TRISAbits.TRISA0 = 0; //HORN_FET output

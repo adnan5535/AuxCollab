@@ -45,7 +45,7 @@ unsigned int MainTimeInterval = 500; //the interval that everything flashes at
 unsigned int ServoTimeInterval = 1500; //the interval the servo switches at
 
 unsigned char ToggleByte = 0; //for toggling lights on or off every MainTimeInterval
-unsigned char ToggleCompare = 1; //toggle is a weird word
+
 unsigned char ServoTimingByte = 0;
 unsigned char ServoPosition = 0; //change this to output register
 
@@ -68,13 +68,13 @@ void main ()
      RCONbits.IPEN = 1;
 
      //set up int0
-     INTCONbits.INT0IE = 1; //enable int0     
+//     INTCONbits.INT0IE = 1; //enable int0
      INTCONbits.INT0IF=0; //set flag to 0
      INTCON2bits.INTEDG0 = 1; //set to rising edge
      //is always high priority
 
      //setup int1
-     INTCON3bits.INT1IE = 1; //enable
+//     INTCON3bits.INT1IE = 1; //enable
      INTCON3bits.INT1IF = 0; //clear flag
      INTCON2bits.INTEDG1 = 1; //rising edge
      INTCON3bits.INT1IP = 1; //high priority
@@ -102,23 +102,12 @@ void main ()
 
 
 
+
+
      LATAbits.LATA1 = 0;
 
      while(mode == TEST_MODE) //test loop
      {
-         if (InputRegister & (1 << WIPER_SWITCH))
-         {
-             Error(ON);
-         }
-         else
-         {
-             Error(OFF);
-         }
-     }
-
-
-   while(mode == RUN_MODE) //actual code
-   {
         //compare time to time intervals
         if ((millis - Time1) > MainTimeInterval) //Signal and Haz lights flash at MainTimeInterval
         {
@@ -126,12 +115,22 @@ void main ()
             ToggleByte ^= 0xff; //this byte toggles between 0 and all ones every MainTimeInterval
                             //can use to make everything flash on or off
         }
-        //read inputs every ReadTimeInterval
-        if ((millis - Time2) > ReadTimeInterval)
+        Horn(ToggleByte);
+     }
+
+
+   while(mode == RUN_MODE) //actual code
+   {
+       ReadInputs();
+
+        //compare time to time intervals
+        if ((millis - Time1) > MainTimeInterval) //Signal and Haz lights flash at MainTimeInterval
         {
-            Time2 = millis;
-            ReadInputs(); //update input register every MainTimeInterval
+            Time1 = millis;
+            ToggleByte ^= 0xff; //this byte toggles between 0 and all ones every MainTimeInterval
+                            //can use to make everything flash on or off
         }
+
         //servo moves every ServoTimeInterval
         if ((millis - Time3) > ServoTimeInterval)
         {
@@ -140,17 +139,36 @@ void main ()
             if (ServoTimingByte & (InputRegister & (1 << WIPER_SWITCH)))
             {
                 ServoPosition = PWMUpdate(FAR_POSITION);
+                //Error(ON);
             }
-            else
+            else if ((ServoPosition == FAR_POSITION))
+            {
+                ServoPosition = PWMUpdate(REST_POSITION - 10);
+                //Error(OFF);
+            }
+            else if (ServoPosition == REST_POSITION - 10)
             {
                 ServoPosition = PWMUpdate(REST_POSITION);
             }
         }
 
+        if (InputRegister & (1 << BRK_SWITCH))
+        {
+            Brake(ON);
+        }
+
+        if (InputRegister & (1 << HORN_SWITCH))
+        {
+            Horn(ON);
+        }
+        else
+        {
+            Horn(OFF);
+        }
 
 
-         Error(ToggleByte); //flash error led (flashing lights cool)
-         
+
+        Error(ToggleByte); //flash error led (flashing lights cool)
 
 
         //turn on/off signal/hazard lights
@@ -180,40 +198,6 @@ void main ()
 #pragma interrupt isr
 void isr(void) //keep as little code in isr as possible
 {
-    INTCONbits.GIE = 0; //disable interrupts
-    if (INTCONbits.INT0IE&&INTCONbits.INT0IF) //Horn interrupt detected and turned on
-    {
-        if(INTCON2bits.INTEDG0) //if rising edge interrupt
-        {
-            Horn(ON); //turn horn on
-            INTCON2bits.INTEDG0 = 0; // set to falling edge interrupt
-
-        }
-        else   //if falling edge interrupt
-        {
-            Horn(OFF); //turn horn off
-            INTCON2bits.INTEDG0 = 1; //set to rising edge interrupt
-
-        }
-        INTCONbits.INT0IF=0; //clear interrupt flag
-    }
-    else if (INTCON3bits.INT1IE&&INTCON3bits.INT1IF) //Brake interrupt detected and turned on
-    {
-        if(INTCON2bits.INTEDG1) //if rising edge interrupt
-        {
-            Brake(ON); //turn on brake lights
-            INTCON2bits.INTEDG1 = 0; //set to falling edge interrupt
-
-
-        }
-        else   //if falling edge interrupt
-        {
-            Brake(OFF); //turn off brake lights
-            INTCON2bits.INTEDG1 = 1; //set to rising edge
-
-        }
-    }
-    INTCONbits.GIE = 1; //enable interrupts
 }
 
 

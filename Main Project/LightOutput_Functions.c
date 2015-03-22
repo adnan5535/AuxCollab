@@ -63,14 +63,29 @@ void Brake(unsigned char BrakeInput) //turns brake lights on and off
 {
     if(BrakeInput)
     {
-        LATCbits.LATC0 = 1; //left
-        LATCbits.LATC1 = 1; //right
+        if(InputRegister & (1 << BLINK_L_SWITCH))
+        {
+            //only Right right light on
+            LATCbits.LATC0 = 1; //right
+            LATCbits.LATC1 = 0;
+        }
+        else if(InputRegister & (1 << BLINK_R_SWITCH))
+        {
+            //only left light on
+            LATCbits.LATC1 = 1;
+            LATCbits.LATC0 = 0;
+        }
+        else
+        {
+            LATCbits.LATC0 = 1;
+            LATCbits.LATC1 = 1;
+        }
         OutputRegister |= (1 << BRK_L_HIGH) | (1 << BRK_R_HIGH);
     }
     else
     {
-        LATCbits.LATC0 = 0; //left
-        LATCbits.LATC1 = 0; //right
+        LATCbits.LATC1 = 0; //left
+        LATCbits.LATC0 = 0; //right
         OutputRegister &= ~((1 << BRK_L_HIGH) | (1 << BRK_R_HIGH));
     }
 }
@@ -96,14 +111,14 @@ void Signal(unsigned char SignalInput)
     {
         //toggle Left Signal light
         LATBbits.LATB4 = 1; //front left on
-        LATCbits.LATC0 = 1; //back left
+        LATCbits.LATC1 = 1; //back left
         OutputRegister |= ( 1 << BLINK_L)|(1 << BRK_L_HIGH);
     }
     else if ( SignalInput == RIGHT )
     {
         //toggle Right Signal Lights
         LATBbits.LATB5 = 1; //Front right
-        LATCbits.LATC1 = 1; //back right on
+        LATCbits.LATC0 = 1; //back right on
         OutputRegister |= (1 << BLINK_R)|(1 << BRK_R_HIGH);
     }
     else
