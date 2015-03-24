@@ -40,9 +40,13 @@ unsigned int Time1 = 0;
 unsigned int Time2 = 0;
 unsigned int Time3 = 0;
 
+#define UP -1
+#define DOWN 1
 unsigned int ReadTimeInterval = 250;  //the interval that we read inputs at
 unsigned int MainTimeInterval = 500; //the interval that everything flashes at
-unsigned int ServoTimeInterval = 1500; //the interval the servo switches at
+unsigned int ServoTimeInterval = 50; //the interval the servo switches at
+unsigned int WiperDirection = 0;
+
 
 unsigned char ToggleByte = 0; //for toggling lights on or off every MainTimeInterval
 
@@ -63,7 +67,7 @@ void main ()
      SetIO(); //set up inputs and outputs   
      ReadInputs(); //update input register
      PWMSetup(REST_POSITION); // Configure PWM and Position servo
-
+     ServoPosition = REST_POSITION;
      //enable interrupt priorities
      RCONbits.IPEN = 1;
 
@@ -83,7 +87,7 @@ void main ()
      T0CONbits.T08BIT = 0; //16 bit timer/counter
      T0CONbits.T0CS = 0; //internal instruction cycle clock
      //T0CONbits.T0SE  //edge select
-     T0CONbits.PSA = 0; //prescaler is assigned
+     T0CONbits.PSA = 1; //prescaler is not assigned
      T0CONbits.T0PS2 = 0; //2 prescaler
      T0CONbits.T0PS1 = 0;
      T0CONbits.T0PS0 = 0;
@@ -101,22 +105,14 @@ void main ()
      INTCONbits.GIE = 1;
 
 
-
-
-
      LATAbits.LATA1 = 0;
 
-     while(mode == TEST_MODE) //test loop
+     while(millis < 750)
      {
-        //compare time to time intervals
-        if ((millis - Time1) > MainTimeInterval) //Signal and Haz lights flash at MainTimeInterval
-        {
-            Time1 = millis;
-            ToggleByte ^= 0xff; //this byte toggles between 0 and all ones every MainTimeInterval
-                            //can use to make everything flash on or off
-        }
-        Horn(ToggleByte);
+
      }
+
+
 
 
    while(mode == RUN_MODE) //actual code
@@ -131,31 +127,55 @@ void main ()
                             //can use to make everything flash on or off
         }
 
-        //servo moves every ServoTimeInterval
-        if ((millis - Time3) > ServoTimeInterval)
-        {
-            Time3 = millis;
-            ServoTimingByte ^= 0xff; //this bit is used to decide where/when to adjust servo
-            if (ServoTimingByte & (InputRegister & (1 << WIPER_SWITCH)))
-            {
-                ServoPosition = PWMUpdate(FAR_POSITION);
-                //Error(ON);
-            }
-            else if ((ServoPosition == FAR_POSITION))
-            {
-                ServoPosition = PWMUpdate(REST_POSITION - 10);
-                //Error(OFF);
-            }
-            else if (ServoPosition == REST_POSITION - 10)
-            {
-                ServoPosition = PWMUpdate(REST_POSITION);
-            }
-        }
 
-        if (InputRegister & (1 << BRK_SWITCH))
-        {
-            Brake(ON);
-        }
+       if ((millis - Time3) > ServoTimeInterval)
+       {
+           Time3 = millis;
+           ServoPosition = PWMUpdate(ServoPosition + WiperDirection);
+           if (WiperDirection == 0)
+           {
+               PWMUpdate(0);
+           }
+       }
+
+       if(ServoPosition < FAR_POSITION)
+       {
+           WiperDirection = DOWN;
+       }
+       if(ServoPosition > (REST_POSITION - 6))
+       {
+           if (ServoPosition != REST_POSITION )
+           WiperDirection = UP;
+       }
+       if (InputRegister & (1 << WIPER_SWITCH))
+       {
+           if(WiperDirection == 0)
+           {
+               WiperDirection = UP;
+           }
+       }
+       else
+       {
+           if (ServoPosition > (REST_POSITION - 3))
+           {
+               WiperDirection = 0;
+               ServoPosition = PWMUpdate(REST_POSITION);
+
+           }
+           else
+           {
+               WiperDirection = DOWN;
+           }
+
+       }
+
+
+
+
+       if (InputRegister & (1 << BRK_SWITCH))
+       {
+           Brake(ON);
+       }
 
         if (InputRegister & (1 << HORN_SWITCH))
         {
@@ -234,7 +254,7 @@ void low_isr(void) //keep as little code in isr as possible
         INTCONbits.TMR0IF = 0; //clear flag
         //timer0 overflow interval is (1/(FOSC))*4*prescaler*(2^16-1)
         //currectly 1/(4*10^6)*4*2*(2^8-1) = 131.07ms
-        millis = millis + 131; //add interval to millis
+        millis = millis + 67; //add interval to millis
     }
 }
 
